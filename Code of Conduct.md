@@ -37,6 +37,7 @@ The code of conduct is to be agreed upon, followed, and upheld by each member of
 _Trevor Reese_
 ### Product Owner:
 _Sayeed Yahya_
-### Members
+### Scrum Team
 _Matthew Lowrie_
+
 _Mandev Singh Seahra_
