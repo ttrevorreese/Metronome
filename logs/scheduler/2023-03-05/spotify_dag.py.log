@@ -82,3 +82,465 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'spotify_etl'
 [2023-03-05T13:02:32.989+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
 [2023-03-05T13:02:33.375+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.600 seconds
+[2023-03-05T13:03:03.844+0000] {processor.py:153} INFO - Started process (PID=1531) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:03:03.847+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:03:03.850+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:03:03.850+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:03:03.880+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:03:03.876+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:03:03.882+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:03:03.940+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.143 seconds
+[2023-03-05T13:03:34.145+0000] {processor.py:153} INFO - Started process (PID=1756) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:03:34.150+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:03:34.160+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:03:34.158+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:03:34.180+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:03:34.177+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:03:34.181+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:03:34.338+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.203 seconds
+[2023-03-05T13:04:04.525+0000] {processor.py:153} INFO - Started process (PID=1992) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:04:04.528+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:04:04.529+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:04:04.529+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:04:04.544+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:04:04.542+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:04:04.545+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:04:04.583+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.066 seconds
+[2023-03-05T13:04:35.520+0000] {processor.py:153} INFO - Started process (PID=2216) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:04:35.523+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:04:35.524+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:04:35.524+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:04:35.538+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:04:35.536+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:04:35.539+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:04:35.582+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.069 seconds
+[2023-03-05T13:05:05.895+0000] {processor.py:153} INFO - Started process (PID=2452) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:05:05.897+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:05:05.898+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:05:05.898+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:05:05.931+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:05:05.928+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:05:05.932+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:05:05.975+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.087 seconds
+[2023-03-05T13:05:36.765+0000] {processor.py:153} INFO - Started process (PID=2675) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:05:36.768+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:05:36.774+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:05:36.774+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:05:36.801+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:05:36.798+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:05:36.802+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:05:36.876+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.121 seconds
+[2023-03-05T13:06:07.983+0000] {processor.py:153} INFO - Started process (PID=2910) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:06:07.986+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:06:07.987+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:06:07.987+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:06:08.020+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:06:08.017+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:06:08.024+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:06:08.062+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.088 seconds
+[2023-03-05T13:06:38.430+0000] {processor.py:153} INFO - Started process (PID=3134) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:06:38.505+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:06:38.568+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:06:38.567+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:06:40.021+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:06:39.993+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:06:40.028+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:06:40.485+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 2.249 seconds
+[2023-03-05T13:07:11.309+0000] {processor.py:153} INFO - Started process (PID=3370) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:07:11.311+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:07:11.313+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:07:11.312+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:07:11.334+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:07:11.330+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'spotify_etl'
+[2023-03-05T13:07:11.336+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:07:11.392+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.091 seconds
+[2023-03-05T13:07:41.820+0000] {processor.py:153} INFO - Started process (PID=3594) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:07:41.823+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:07:41.825+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:07:41.825+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:07:43.206+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:07:43.198+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 10, in <module>
+    'start_date': datetime(2023, 3, 5),
+NameError: name 'datetime' is not defined
+[2023-03-05T13:07:43.208+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:07:43.285+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 1.476 seconds
+[2023-03-05T13:08:13.664+0000] {processor.py:153} INFO - Started process (PID=3829) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:08:13.667+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:08:13.668+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:08:13.668+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:08:13.943+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:08:13.939+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 10, in <module>
+    'start_date': datetime(2023, 3, 5),
+NameError: name 'datetime' is not defined
+[2023-03-05T13:08:13.943+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:08:13.964+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.317 seconds
+[2023-03-05T13:08:44.130+0000] {processor.py:153} INFO - Started process (PID=4054) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:08:44.132+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:08:44.133+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:08:44.133+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:08:44.605+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:08:44.600+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 10, in <module>
+    'start_date': datetime(2023, 3, 5),
+NameError: name 'datetime' is not defined
+[2023-03-05T13:08:44.606+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:08:44.633+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.496 seconds
+[2023-03-05T13:09:15.273+0000] {processor.py:153} INFO - Started process (PID=4289) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:15.276+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:09:15.278+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:09:15.278+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:15.517+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:09:15.510+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 10, in <module>
+    'start_date': datetime(2023, 3, 5),
+NameError: name 'datetime' is not defined
+[2023-03-05T13:09:15.520+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:15.552+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.285 seconds
+[2023-03-05T13:09:46.430+0000] {processor.py:153} INFO - Started process (PID=4513) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:46.431+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:09:46.432+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:09:46.432+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:46.730+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:09:46.725+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 10, in <module>
+    'start_date': datetime(2023, 3, 5),
+NameError: name 'datetime' is not defined
+[2023-03-05T13:09:46.731+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:46.755+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.330 seconds
+[2023-03-05T13:09:49.533+0000] {processor.py:153} INFO - Started process (PID=4519) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:49.536+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:09:49.537+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:09:49.537+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:49.583+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:09:49.575+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:09:49.585+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:09:49.646+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.133 seconds
+[2023-03-05T13:10:20.445+0000] {processor.py:153} INFO - Started process (PID=4757) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:10:20.447+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:10:20.449+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:10:20.448+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:10:20.467+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:10:20.465+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:10:20.468+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:10:20.500+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.073 seconds
+[2023-03-05T13:10:51.555+0000] {processor.py:153} INFO - Started process (PID=4980) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:10:51.557+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:10:51.559+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:10:51.558+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:10:51.576+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:10:51.574+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:10:51.577+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:10:51.604+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.061 seconds
+[2023-03-05T13:11:21.724+0000] {processor.py:153} INFO - Started process (PID=5217) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:11:21.727+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:11:21.730+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:11:21.729+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:11:21.752+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:11:21.749+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:11:21.752+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:11:21.793+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.075 seconds
+[2023-03-05T13:11:52.812+0000] {processor.py:153} INFO - Started process (PID=5441) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:11:52.815+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:11:52.816+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:11:52.816+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:11:52.831+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:11:52.829+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:11:52.832+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:11:52.872+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.065 seconds
+[2023-03-05T13:12:23.315+0000] {processor.py:153} INFO - Started process (PID=5677) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:12:23.317+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:12:23.319+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:12:23.319+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:12:23.333+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:12:23.331+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:12:23.333+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:12:23.363+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.055 seconds
+[2023-03-05T13:12:53.482+0000] {processor.py:153} INFO - Started process (PID=5901) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:12:53.484+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:12:53.486+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:12:53.486+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:12:53.504+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:12:53.501+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:12:53.505+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:12:53.552+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.074 seconds
+[2023-03-05T13:13:24.020+0000] {processor.py:153} INFO - Started process (PID=6137) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:13:24.023+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:13:24.024+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:13:24.024+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:13:24.039+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:13:24.037+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:13:24.039+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:13:24.079+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.065 seconds
+[2023-03-05T13:13:54.327+0000] {processor.py:153} INFO - Started process (PID=6363) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:13:54.330+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:13:54.332+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:13:54.331+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:13:54.353+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:13:54.351+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:13:54.354+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:13:54.389+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.071 seconds
+[2023-03-05T13:14:24.766+0000] {processor.py:153} INFO - Started process (PID=6598) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:14:24.772+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:14:24.775+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:14:24.775+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:14:24.806+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:14:24.801+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:14:24.807+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:14:24.856+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.099 seconds
+[2023-03-05T13:14:55.381+0000] {processor.py:153} INFO - Started process (PID=6822) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:14:55.383+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:14:55.385+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:14:55.384+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:14:55.410+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:14:55.406+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:14:55.410+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:14:55.480+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.104 seconds
+[2023-03-05T13:15:26.585+0000] {processor.py:153} INFO - Started process (PID=7057) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:15:26.587+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:15:26.588+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:15:26.588+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:15:26.615+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:15:26.610+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:15:26.616+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:15:26.653+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.075 seconds
+[2023-03-05T13:15:57.352+0000] {processor.py:153} INFO - Started process (PID=7281) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:15:57.355+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:15:57.356+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:15:57.356+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:15:57.389+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:15:57.385+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:15:57.390+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:15:57.451+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.110 seconds
+[2023-03-05T13:16:28.181+0000] {processor.py:153} INFO - Started process (PID=7505) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:16:28.189+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:16:28.196+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:16:28.195+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:16:28.245+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:16:28.241+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:16:28.246+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:16:28.301+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.140 seconds
+[2023-03-05T13:16:58.470+0000] {processor.py:153} INFO - Started process (PID=7741) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:16:58.477+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:16:58.479+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:16:58.479+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:16:58.505+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:16:58.503+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:16:58.506+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:16:58.533+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.067 seconds
+[2023-03-05T13:17:29.133+0000] {processor.py:153} INFO - Started process (PID=7965) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:17:29.135+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:17:29.136+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:17:29.136+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:17:29.149+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:17:29.147+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:17:29.150+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:17:29.175+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.050 seconds
+[2023-03-05T13:18:01.047+0000] {processor.py:153} INFO - Started process (PID=8200) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:18:01.073+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:18:01.125+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:18:01.109+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:18:01.644+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:18:01.620+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:18:01.650+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:18:01.915+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 1.094 seconds
+[2023-03-05T13:18:32.687+0000] {processor.py:153} INFO - Started process (PID=8424) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:18:32.691+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:18:32.694+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:18:32.693+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:18:32.724+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:18:32.719+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:18:32.727+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:18:32.775+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.098 seconds
+[2023-03-05T13:19:03.430+0000] {processor.py:153} INFO - Started process (PID=8648) to work on /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:19:03.433+0000] {processor.py:743} INFO - Processing file /opt/airflow/dags/spotify_dag.py for tasks to queue
+[2023-03-05T13:19:03.434+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:19:03.434+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:19:03.461+0000] {logging_mixin.py:137} INFO - [2023-03-05T13:19:03.457+0000] {dagbag.py:343} ERROR - Failed to import: /opt/airflow/dags/spotify_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/dagbag.py", line 339, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/spotify_dag.py", line 5, in <module>
+    from dags.dags.dags.spotify_etl import run_spotify_etl
+ModuleNotFoundError: No module named 'dags'
+[2023-03-05T13:19:03.463+0000] {processor.py:755} WARNING - No viable dags retrieved from /opt/airflow/dags/spotify_dag.py
+[2023-03-05T13:19:03.500+0000] {processor.py:175} INFO - Processing /opt/airflow/dags/spotify_dag.py took 0.076 seconds

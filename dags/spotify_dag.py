@@ -1,8 +1,8 @@
-from datetime import timedelta
+from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
-from spotify_etl import run_spotify_etl
+from dags.dags.dags.spotify_etl import run_spotify_etl
 
 default_args = {
     'owner': 'airflow',
