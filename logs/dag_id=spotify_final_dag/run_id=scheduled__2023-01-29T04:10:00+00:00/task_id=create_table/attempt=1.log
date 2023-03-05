@@ -1,7 +1,0 @@
-[2023-03-05T14:39:03.601+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: spotify_final_dag.create_table scheduled__2023-01-29T04:10:00+00:00 [None]>
-[2023-03-05T14:39:20.652+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: spotify_final_dag.create_table scheduled__2023-01-29T04:10:00+00:00 [None]>
-[2023-03-05T14:39:20.681+0000] {taskinstance.py:1279} INFO - 
---------------------------------------------------------------------------------
-[2023-03-05T14:39:20.688+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
-[2023-03-05T14:39:20.696+0000] {taskinstance.py:1281} INFO - 
---------------------------------------------------------------------------------
