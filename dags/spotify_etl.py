@@ -1,121 +1,91 @@
-import sqlalchemy
-import pandas as pd
-from sqlalchemy.orm import sessionmaker
+import pandas as pd 
 import requests
-import json
 from datetime import datetime
-import datetime 
-import sqlite3
-
-DATABASE_LOCATION = "sqlite://my_played_tracks.sqlite"
-USER_ID = "lowriem"
-
-####  PRINT OF A NEW TOKEN EVERY FEW MINTUES AS THEY EXPIRE AT THE FOLLOWING URL: https://developer.spotify.com/console/get-recently-played/?limit=10&after=1596299315000&before=
-TOKEN = "BQCVE69uZ-k19iFPNDg3S6z1uDaNrHZmzY7_Css4uCUplt011I3z9uPwbfrzjplBMuITR9bnqlT8Erx4uVeKZ_W0yqIATyo8g_3onXMAJ48yuGYfNCCs1sSzSp45ve9EmC0kaUDLdHYXzkZpjl1psKBo7FyQENHlUJ7KeomMSvl2kY8mAGjaB5WTVJyvLHcO-WBtkG0_nw"
+import datetime
+import pandas as pd 
+import requests
+from datetime import datetime
+import datetime
 
 
-def check_if_valid_data(df: pd.DataFrame) -> bool:
 
-  if df.empty:
-    print("No songs downloaded, finishing process")
-    return False
+USER_ID = "YOUR_USERNAME_HERE" 
+TOKEN = "BQCYlJMwalTfuiKswEXtcKtQrN70_LEx6vmsC3qwmXAQQkeCUVIbE42MBZ13ALSfWkLYx-Rwu9Ks27y5eZwX4xri7Zx9_ZLfYKxAZI_KBypi0ZCKXG7PGY4_ta3Qg1A6A2cU4Qk-WkdqpurdKZxkqpqvD6oI_XVxCa4pNu0Hg27419zEAW3IZ7s5RRQlGqpD9ISzRAry3g"
+print('started')
+# Creating an function to be used in other pyrhon files
+def return_dataframe(): 
+    input_variables = {
+        "Accept" : "application/json",
+        "Content-Type" : "application/json",
+        "Authorization" : "Bearer {token}".format(token=TOKEN)
+    }
+     
+    today = datetime.datetime.now()
+    yesterday = today - datetime.timedelta(days=1)
+    yesterday_unix_timestamp = int(yesterday.timestamp()) * 1000
 
+    # Download all songs you've listened to "after yesterday", which means in the last 24 hours      
+    r = requests.get("https://api.spotify.com/v1/me/player/recently-played?limit=50&after={time}".format(time=yesterday_unix_timestamp), headers = input_variables)
 
-  if pd.Series(df['played_at']).is_unique:
-    pass
-  else:
-    raise Exception("Primary Key check was violated, duplicates detected")
+    data = r.json()
+    song_names = []
+    artist_names = []
+    played_at_list = []
+    timestamps = []
 
-
-  if df.isnull().values.any():
-    raise Exception("Null value found. Terminated")
-
-
-  yesterday = datetime.datetime.now() - datetime.timedelta(days=1)
-  yesterday = yesterday.replace(hour = 0, minute = 0, second = 0, microsecond = 0)
-
-  timestamps = df["timestamp"].tolist()
-#  for timestamp in timestamps:
-#    if datetime.datetime.strptime(timestamp, "%Y-%m-%d") != yesterday:
-#      raise Exception("One of the values was not in the time constraint")
-
-  return True
-
-
-if __name__ == "__main__":
-  headers = {
-      "Accept" : "application/json",
-      "Content-Type" : "application/json",
-      "Authorization" : "Bearer {token}".format(token=TOKEN)
-  }
-
-
-  today = datetime.datetime.now()
-  yesterday = today - datetime.timedelta(days=10)
-  yesterday_unix_timestamp = int(yesterday.timestamp()) * 1000
-
-  r = requests.get("https://api.spotify.com/v1/me/player/recently-played?after={time}".format(time = yesterday_unix_timestamp), headers = headers)
-
-  data = r.json()
-
-  song_names =[]
-  artist_names = []
-  played_at_list = []
-  timestamps = []
-
-  for song in data["items"]:
+    # Extracting only the relevant bits of data from the json object      
+    for song in data["items"]:
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at_list.append(song["played_at"])
         timestamps.append(song["played_at"][0:10])
-  
-  song_dict = {
-      "song_name" : song_names,
-      "artist_names" : artist_names,
-      "played_at" : played_at_list,
-      "timestamp" : timestamps
-  }
-  song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_names", "played_at", "timestamp"])
+        
+    # Prepare a dictionary in order to turn it into a pandas dataframe below       
+    song_dict = {
+        "song_name" : song_names,
+        "artist_name": artist_names,
+        "played_at" : played_at_list,
+        "timestamp" : timestamps
+    }
+    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp"])
+    return song_df
 
+def Data_Quality(load_df):
+    #Checking Whether the DataFrame is empty
+    if load_df.empty:
+        print('No Songs Extracted')
+        return False
+    
+    #Enforcing Primary keys since we don't need duplicates
+    if pd.Series(load_df['played_at']).is_unique:
+       pass
+    else:
+        #The Reason for using exception is to immediately terminate the program and avoid further processing
+        raise Exception("Primary Key Exception,Data Might Contain duplicates")
+    
+    #Checking for Nulls in our data frame 
+    if load_df.isnull().values.any():
+        raise Exception("Null values found")
 
+# Writing some Transformation Queries to get the count of artist
+def Transform_df(load_df):
 
-from tabulate import tabulate
+    #Applying transformation logic
+    Transformed_df=load_df.groupby(['timestamp','artist_name'],as_index = False).count()
+    Transformed_df.rename(columns ={'played_at':'count'}, inplace=True)
+    #Creating a Primary Key based on Timestamp and artist name
+    Transformed_df["ID"] = Transformed_df['timestamp'].astype(str) +"-"+ Transformed_df["artist_name"]
 
+    return Transformed_df[['ID','timestamp','artist_name','count']]
 
+def spotify_etl():
+    #Importing the songs_df from the Extract.py
+    load_df=return_dataframe()
+    Data_Quality(load_df)
+    #calling the transformation
+    Transformed_df=Transform_df(load_df)    
+    print(load_df)
+    return (load_df)
 
+spotify_etl()
 
-print(tabulate(song_df, headers='keys', tablefmt='psql'))
-
-
-#validate
-
-if check_if_valid_data(song_df):
-  print("Data Valid, proceed to loading stage")
-
-
-#load
-engine = sqlalchemy.create_engine(DATABASE_LOCATION)
-conn = sqlite3.connect("my_played_traks.sqlite")
-cursor = conn.cursor()
-
-sql_query = """
-CREATE TABLE IF NOT EXISTS my_played_tracks(
-  song_name VARCHAR(200),
-  artist_name VARCHAR(200),
-  played_at VARCHAR(200),
-  timestamp VARCHAR(200),
-  CONSTRAINT primary_key_constraint PRIMARY KEY (played_at)
-)
-
-"""
-
-cursor.execute(sql_query)
-print("Opened database successfully")
-
-try:
-    song_df.to_sql("my_played_tracks", engine, index=False, if_exists='append')
-except:
-    print("Data already exists in the database")
-
-conn.close()
-print("Close database successfully")
