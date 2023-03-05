@@ -5,7 +5,7 @@ import datetime
 
 
 USER_ID = "YOUR_USER_ID" 
-TOKEN = "YOUR_TOKEN"
+TOKEN = "BQCYlJMwalTfuiKswEXtcKtQrN70_LEx6vmsC3qwmXAQQkeCUVIbE42MBZ13ALSfWkLYx-Rwu9Ks27y5eZwX4xri7Zx9_ZLfYKxAZI_KBypi0ZCKXG7PGY4_ta3Qg1A6A2cU4Qk-WkdqpurdKZxkqpqvD6oI_XVxCa4pNu0Hg27419zEAW3IZ7s5RRQlGqpD9ISzRAry3g"
 
 
 # Creating an function to be used in other python files
@@ -17,7 +17,7 @@ def return_dataframe():
     }
      
     today = datetime.datetime.now()
-    yesterday = today - datetime.timedelta(days=1 #no of Days u want the data for)
+    yesterday = today - datetime.timedelta(days=1)
     yesterday_unix_timestamp = int(yesterday.timestamp()) * 1000
 
     # Download all songs you've listened to "after yesterday", which means in the last 24 hours      

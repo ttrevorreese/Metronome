@@ -1,13 +1,15 @@
-from datetime import datetime, timedelta
+from datetime import timedelta
+import datetime
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
-from dags.dags.dags.spotify_etl import run_spotify_etl
+
+from spotify_etl import run_spotify_etl
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2023, 3, 5),
+    'start_date': datetime(2020, 11, 8),
     'email': ['airflow@example.com'],
     'email_on_failure': False,
     'email_on_retry': False,
