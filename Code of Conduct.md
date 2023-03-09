@@ -4,7 +4,7 @@ The code of conduct is to be agreed upon, followed, and upheld by each member of
 
 
 ## Ethical
-1. Every member shall be respectful to each other and respect their professional boundaries.
+1. Every member shall be respectful to each other and respect their personal and professional boundaries.
 2. Every member shall conduct their work in a timely and professional manner.
 3. Every member shall be inclusive; no discrimination of any type.
 4. Every member shall understand their role for the given task(s) and do their part in completing their given tasks.
@@ -14,10 +14,10 @@ The code of conduct is to be agreed upon, followed, and upheld by each member of
 
 ## Workload
 6. Every member shall understand that should there be an issue, they can contact the tutor at any time, but it must be discussed with the group first.
-	1. If there is an issue, any group member can and should contact Dr. Kevin Chalmers at kevin.chalmers@roehampton.ac.uk.
-7. Meetings will take place at least two (2) times a week, but preferably three (3) days, and should be attended by every member, unless otherwise stated.
+	1. If there is an outstanding issue, any group member can and should contact Dr. Kevin Chalmers at kevin.chalmers@roehampton.ac.uk.
+7. Meetings will take place at least two (2) times a week and should be attended by every member, unless otherwise stated.
 	1. The meetings will be organized via the group’s Whatsapp group chat at least one (1) day prior to the potential meeting date.
-8. Every member shall help each other with any given task, to a reasonable extent. The group was created and agreed upon beforehand.
+8. Every member shall help each other with any given task, to a reasonable extent.
 9. The workload should be spread evenly to each member, not forcing a number of the group members to do a great load of work compared to the others.
 10. There is a mini-brief every day in the group’s Whatsapp chat breaking down all of the work we have started or completed on the day.
 
@@ -33,11 +33,11 @@ The code of conduct is to be agreed upon, followed, and upheld by each member of
 # Signatures
 
 
-### Team Leader:
-_Trevor Reese_
-### Secondary Team Leader:
-_Matthew Lowrie_
 ### Scrum Master:
-_Mandev Singh Seahra_
+_Trevor Reese_
 ### Product Owner:
 _Sayeed Yahya_
+### Scrum Team
+_Matthew Lowrie_
+
+_Mandev Singh Seahra_
