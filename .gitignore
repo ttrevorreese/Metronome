@@ -44,3 +44,6 @@ _ReSharper*/
 
 # Office Temp Files
 ~$*
+
+# Specific files
+logs/scheduler/latest
