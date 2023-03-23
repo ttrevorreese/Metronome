@@ -9,8 +9,8 @@ import sqlite3
 
 
 DATABASE_LOCATION = "sqlite:///my_played_tracks.sqlite"
-USER_ID = "Matthew Lowrie" # your Spotify username 
-TOKEN = "BQDmJnKQZQGSQF7Tk2Zmh8-_V78lDBJQZvUKHT4S0EEcpDEWSg9TsPkipPU6FLEDEzeScFQdzSVEBt-0xF0H1gdnTDK22Dr4HWTSLDeydi9mt9xWPgnwTOb2jPJCQycXI5GrDaFhFZcaTQrfGO64GQj6_4B377IJsqUKIJOZ7zkscSWH2l7bSnXD6olkMN3MzcchHcDJrQ" # your Spotify API token
+USER_ID = "reesespieces07" # your Spotify username 
+TOKEN = "BQCffLNkounJxH-Dg6wKr1ctSQOvVlbEZo_qKn8tQMmTMr63iKIzl_L7s1GrvA9v4MoNRd9GhBzX73U1g05zrmW9TXxqpZSMfiGWiHg5MJBKi64ZEA9frKl5omEBZ5t-OPmnXWm0gthrr6U9IapX-lZj40NCiwR_5CoMRhs8PPUMLIjdrF54OYZfLDo" # your Spotify API token
 
 # Generate your token here:  https://developer.spotify.com/console/get-recently-played/
 # Note: You need a Spotify account (can be easily created for free)
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     yesterday_unix_timestamp = int(yesterday.timestamp()) * 1000
 
     # Download all songs you've listened to "after yesterday", which means in the last 24 hours      
-    r = requests.get("https://api.spotify.com/v1/me/player/recently-played?lafter={time}".format(time=yesterday_unix_timestamp), headers = headers)
+    r = requests.get("https://api.spotify.com/v1/me/player/recently-played?limit=50&after={time}".format(time=yesterday_unix_timestamp), headers = headers)
 
     data = r.json()
 
