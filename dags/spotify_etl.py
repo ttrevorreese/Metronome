@@ -9,10 +9,10 @@ import datetime
 
 
 
-USER_ID = "YOUR_USERNAME_HERE" 
-TOKEN = "BQAYq-2qENYx62Lw3fAUQ9C-oIAPhLif3bsPhSGh_oecgr2FzI4uXOvMCFqftpBfWLXIZractcfb27PdFy43Wi0nJfOnqmp0sGkjZcHXHotnU5hQKs1mY6spDxBId7ijyvSVjV6jXI2eI57hl_t1mydkjctro95tp2gFz6UzG6hhP2Bh5GWo7XwPbYfXy2HmHY_AX5QNXw"
+USER_ID = "reesespieces07" 
+TOKEN = "BQCffLNkounJxH-Dg6wKr1ctSQOvVlbEZo_qKn8tQMmTMr63iKIzl_L7s1GrvA9v4MoNRd9GhBzX73U1g05zrmW9TXxqpZSMfiGWiHg5MJBKi64ZEA9frKl5omEBZ5t-OPmnXWm0gthrr6U9IapX-lZj40NCiwR_5CoMRhs8PPUMLIjdrF54OYZfLDo"
 print('started')
-# Creating an function to be used in other pyrhon files
+# Creating an function to be used in other python files
 def return_dataframe(): 
     input_variables = {
         "Accept" : "application/json",
