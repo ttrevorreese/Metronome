@@ -62,14 +62,30 @@ We continued the development of the data pipeline process and ended up connectin
 
 *10 March 2023 - 30 March 2023*
 
-### Meeting x - date
+### Meeting 13 - 12 March 2023
 
-Minutes
+We begun implementing an integral part of the Spotify API for song recommendations in the future, the artist ID variable.
+
+### Meeting 14 - 19 March 2023
+
+To further develop our features, we began full development on the playlist creation tool.
+
+### Meeting 15 - 26 March 2023
+
+We continued development on the playlist creation tool with song recommendations.
+
+### Meeting 16 - 30 March 2023
+
+We gathered to present our work for our Sprint 3 submission.
 
 ## Sprint 04
 
 *31 March 2023 - 27 April 2023*
 
-### Meeting x - date
+### Meeting 17 - 19 April 2023
 
-Minutes
+We revised our work thus far after Spring Break and laid out our goals for our final deliverables.
+
+### Meeting 18 - 20 April 2023
+
+We begun revising our pipeline structure, as it was not efficient enough for our final deliverable. We looked at the structure of what we had and worked on ways to more efficiently provide the service we need. We connected the recommendation tool to Airflow and began troubleshooting the dag process in order to finalize the playlist creation tool.
