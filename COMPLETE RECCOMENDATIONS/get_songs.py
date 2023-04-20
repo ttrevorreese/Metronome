@@ -8,8 +8,8 @@ import datetime
 import sqlite3
 
 
-USER_ID = "" 
-TOKEN = "" #TOKEN LINK - https://developer.spotify.com/
+USER_ID = "reesespieces07" 
+TOKEN = "BQC3mPPu7x9gK8Caq1HIvR6tIHHiEWs7Dt1eL2sbgQaoPYzcSA70GPFqUfTcf_5yN-Nd-BqHSGBSla9zMglQ1gaRAcktRRfbFVRdCol_ggNx5FSzOgrGMPWkl0ocmMebef5LSZJcu-fpTg2jlrlHogQoMkoj2vfG0XK4b1mQhvRZXGJamBo-7lT3SPfliCgja2NLc_GACYKlE9XhYjx7lmIepPyZfGDvZ6MqyghWZ8FeqAIQBK_BpLOdKyHvuMxZL9X9bQVeMkLcNGlQKZSme8IP1cco98V0JzdXgn0CiJtuKg78ChR3pJbW8M5aL5tHCTWYtcd10_Q6VKR95kWLQjEbkQpz-G8A" #TOKEN LINK - https://developer.spotify.com/
 limit = 50
 
 # Creating an function to be used in other python files

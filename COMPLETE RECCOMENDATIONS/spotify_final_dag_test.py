@@ -5,9 +5,14 @@ from airflow.hooks.base_hook import BaseHook
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from sqlalchemy import create_engine
-
 from airflow.utils.dates import days_ago
-from spotify_etl import spotify_etl
+# Import functions from other python files
+#from spotify_etl import spotify_etl
+from get_songs import get_songs
+from get_songs import make_db
+from recommendations import read_db
+from recommendations import make_rec
+from recommendations import make_db
 
 default_args = {
     'owner': 'airflow',
@@ -21,19 +26,25 @@ default_args = {
 }
 
 dag = DAG(
-    'spotify_final_dag',
+    'spotify_recommendations',
     default_args=default_args,
-    description='Spotify ETL process 1-min',
+    description='Spotify ETL Process and Song Recommendations',
     schedule_interval=dt.timedelta(minutes=50),
 )
-
-def ETL():
-    print("Started ETL process.")
-    df=spotify_etl()
-    #print(df)
+    
+def play_history():
+    print("Started song history extraction.")
+    df=get_songs()
     conn = BaseHook.get_connection('postgre_sql')
     engine = create_engine(f'postgresql://{conn.login}:{conn.password}@{conn.host}:{conn.port}/{conn.schema}')
-    df.to_sql('my_played_tracks', engine, if_exists='replace')
+    df.to_sql('song_history', engine, if_exists='replace')
+    
+def recommendations():
+    print("Started recommendation creation.")
+    df=make_rec()
+    conn = BaseHook.get_connection('postgre_sql')
+    engine = create_engine(f'postgresql://{conn.login}:{conn.password}@{conn.host}:{conn.port}/{conn.schema}')
+    df.to_sql('recommendations', engine, if_exists='replace')
 
 with dag:    
     create_table= PostgresOperator(
@@ -51,9 +62,15 @@ with dag:
     )
 
     run_etl = PythonOperator(
-        task_id='spotify_etl_final',
-        python_callable=ETL,
+        task_id='spotify_etl',
+        python_callable=play_history,
+        dag=dag,
+    )
+    
+    run_rec = PythonOperator(
+        task_id='recommendation_generator',
+        python_callable=recommendations,
         dag=dag,
     )
 
-    create_table >> run_etl
+    create_table >> run_etl >> run_rec

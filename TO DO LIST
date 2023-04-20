@@ -1,8 +1,0 @@
-1. FIGURE OUT DAG
-2. Create a way to download the file from airflow
-3. With downloaded file, create code to do something with it then re upload it to airflow
-
-
-create your first dag link - https://marclamberti.com/blog/airflow-dag-creating-your-first-dag-in-5-minutes/?utm_content=cmp-true
-how to download form airflow - https://betterdatascience.com/apache-airflow-amazon-s3-download/#:~:text=Downloading%20files%20from%20Amazon%20S3,in%20the%20Apache%20Airflow%20series
-create a playlist from seed artists - https://medium.com/analytics-vidhya/build-your-own-playlist-generator-with-spotifys-api-in-python-ceb883938ce4

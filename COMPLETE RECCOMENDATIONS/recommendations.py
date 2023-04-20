@@ -7,7 +7,7 @@ import json
 from datetime import datetime
 import datetime 
 import sqlite3
-TOKEN = ""  #can be imported from the other file
+TOKEN = "BQC3mPPu7x9gK8Caq1HIvR6tIHHiEWs7Dt1eL2sbgQaoPYzcSA70GPFqUfTcf_5yN-Nd-BqHSGBSla9zMglQ1gaRAcktRRfbFVRdCol_ggNx5FSzOgrGMPWkl0ocmMebef5LSZJcu-fpTg2jlrlHogQoMkoj2vfG0XK4b1mQhvRZXGJamBo-7lT3SPfliCgja2NLc_GACYKlE9XhYjx7lmIepPyZfGDvZ6MqyghWZ8FeqAIQBK_BpLOdKyHvuMxZL9X9bQVeMkLcNGlQKZSme8IP1cco98V0JzdXgn0CiJtuKg78ChR3pJbW8M5aL5tHCTWYtcd10_Q6VKR95kWLQjEbkQpz-G8A"  #can be imported from the other file
 def read_db():
     import sqlite3
     import pandas as pd
@@ -22,12 +22,12 @@ def read_db():
     conn.close()
 
     # Print the DataFrame
-    make_recc(song_df)
+    make_rec(song_df)
     
 
 
 
-def make_recc(song_df):
+def make_rec(song_df):
     import requests
 
     endpoint_url = "https://api.spotify.com/v1/recommendations?"
@@ -75,19 +75,19 @@ def make_recc(song_df):
     song_dict = {"Artist Name": name, "Song Name": song_name}
 
     # Convert the dictionary into a DataFrame
-    recc_df = pd.DataFrame(song_dict)
+    rec_df = pd.DataFrame(song_dict)
 
     # Print the resulting DataFrame
-    print(recc_df)
-    make_db(recc_df)
+    print(rec_df)
+    make_db(rec_df)
 
 
 
 
-def make_db(recc_df):
+def make_db(rec_df):
        
     # Define the file path and database name
-    db_path = "reccomendations.db"
+    db_path = "recommendations.db"
     # Create a SQLite database connection
     conn = sqlite3.connect(db_path)
 
@@ -98,7 +98,7 @@ def make_db(recc_df):
     
 
     # Insert the DataFrame into the recommendations table
-    recc_df.to_sql('recommendations', conn, if_exists='replace', index=False)
+    rec_df.to_sql('recommendations', conn, if_exists='replace', index=False)
 
     # Commit the changes and close the database connection
     conn.commit()
