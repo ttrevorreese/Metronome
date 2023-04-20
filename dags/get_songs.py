@@ -7,7 +7,6 @@ from datetime import datetime
 import datetime 
 import sqlite3
 
-
 USER_ID = "reesespieces07" 
 TOKEN = "BQC3mPPu7x9gK8Caq1HIvR6tIHHiEWs7Dt1eL2sbgQaoPYzcSA70GPFqUfTcf_5yN-Nd-BqHSGBSla9zMglQ1gaRAcktRRfbFVRdCol_ggNx5FSzOgrGMPWkl0ocmMebef5LSZJcu-fpTg2jlrlHogQoMkoj2vfG0XK4b1mQhvRZXGJamBo-7lT3SPfliCgja2NLc_GACYKlE9XhYjx7lmIepPyZfGDvZ6MqyghWZ8FeqAIQBK_BpLOdKyHvuMxZL9X9bQVeMkLcNGlQKZSme8IP1cco98V0JzdXgn0CiJtuKg78ChR3pJbW8M5aL5tHCTWYtcd10_Q6VKR95kWLQjEbkQpz-G8A" #TOKEN LINK - https://developer.spotify.com/
 limit = 50
@@ -25,8 +24,6 @@ def get_songs():
     yesterday = today - datetime.timedelta(days=10)
     yesterday_unix_timestamp = int(yesterday.timestamp()) * 1000
 
-
-    
     # Download all songs you've listened to "after yesterday", which means in the last 24 hours      
     r = requests.get("https://api.spotify.com/v1/me/player/recently-played?limit={limit}&after={time}".format(time=yesterday_unix_timestamp, limit = limit), headers = input_variables)
 
@@ -56,8 +53,6 @@ def get_songs():
     song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid"])
     make_db(song_df)
 
-
-
 def make_db(song_df):
     import sqlite3
     import pandas as pd
@@ -71,10 +66,5 @@ def make_db(song_df):
     # Commit changes and close the connection
     conn.commit()
     conn.close()
-
-
-
-
-
 
 get_songs()

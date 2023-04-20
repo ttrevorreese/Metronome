@@ -30,6 +30,7 @@ def return_dataframe():
     artist_names = []
     played_at_list = []
     timestamps = []
+    artistid = []
 
     # Extracting only the relevant bits of data from the json object      
     for song in data["items"]:
@@ -37,13 +38,15 @@ def return_dataframe():
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at_list.append(song["played_at"])
         timestamps.append(song["played_at"][0:10])
+        artistid.append(song["track"]["album"]['artists'][0]['id'])
         
     # Prepare a dictionary in order to turn it into a pandas dataframe below       
     song_dict = {
         "song_name" : song_names,
         "artist_name": artist_names,
         "played_at" : played_at_list,
-        "timestamp" : timestamps
+        "timestamp" : timestamps,
+        'artistid' : artistid
     }
     song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp"])
     return song_df
@@ -86,4 +89,3 @@ def spotify_etl():
     return (load_df)
 
 spotify_etl()
-

@@ -6,7 +6,7 @@ from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from sqlalchemy import create_engine
 from airflow.utils.dates import days_ago
-# Import functions from other python files
+# Import functions from other python files (scripts)
 #from spotify_etl import spotify_etl
 from get_songs import get_songs
 from get_songs import make_db
