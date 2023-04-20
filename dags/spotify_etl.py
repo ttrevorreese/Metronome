@@ -7,8 +7,6 @@ import requests
 from datetime import datetime
 import datetime
 
-
-
 USER_ID = "reesespieces07" 
 TOKEN = "BQDpd_HeqC6Aa41pQCB_QB9SReweqlfC4kVjgecmNdpb0TH6ujdmcbohjkvkInJ5wBj6pVgq2VdHbFG_k9kxuw35EaJI5aOjhgt4dyMV735XH7w5-6fY7JX1JnCJs0cTq1i30OE6TTSMVCMSloK9H06USO53ueIo9VPnYw58Rn-m7Tf6z1Ic0vZ-x1N4Tg4ZyAoQce7Wc4RIBhf2Ek2eAqhlrwEKgM4m7B5MJ41-xW0Eshy5Y3xs11nYVUL_ZJ2p_cJ5qhOQhWuYNwVS9gyFdhNUXPNKaJ1I9Hb2kij8ianU0NewCYg_gN9DmADSYnTSvIVZJNAFx7tLFM8MhB-IYmsculOBKX3B"
 print('started')
