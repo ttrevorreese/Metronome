@@ -6,7 +6,11 @@ import json
 from datetime import datetime
 import datetime 
 import sqlite3
+<<<<<<< HEAD
 TOKEN = "BQC9vQeypOtEkQvXOWlPWaq1y136iG3PTlURzhxaP3F-ALDGe2wnO23paN9CdlLak93gGjNFQ8T1g519A03BVDGsOvGr9nsRB50ainZzg_l5zUPqKyNOZipnQ7jYf8yizvyT4kZvTdeJ0K3swE1-BAxW_Z0xsdxes_2m9iFEBCgFb8GC6Pz-_G544cwsM4v_ses4sz7mxA7tSU86Yp6fVRXU8iSbwdqSJkGk9g6o2zWprIGhISq_XiySSJglttzDpEWP1X4q0tc7lVD1x3BbUaLNmgd-NsX3TM2mOoozY-1tNLNl3rV_c16FuWE4pJ87qE9VnAQVjJj1ZGpNZd2z9NPuUY2xZLxQ" #TOKEN LINK - https://developer.spotify.com/
+=======
+TOKEN = "BQC7NHaIwubN2-oPpxbK5zBMQVg5uqGE8U1TTcWIbtEA2I9lEJwGhjz4BE9vcgD3SK_oVI-n_uR3a_h9D1XoZghKw_KiJlRO-XhHPEeZ994wIh6EhmG6DldOY7Z7B1qYu5VLp-HrV_36YNAmW0nJVt9HY1Dg8cQbWkMoZFWqgjUfNZIyvtTdrrYpHrI_yQ8VrreQdZ9Efozf7FR45UYk_g-9GV4QoU-p1VMNuXzADlbW1GNxQ0Og1PicIIs1dsy1VSMCdBdSLxXUifWuDkA2mFIJLJMaWzSRjS_Pojep6-5khpK-fgR2cmw4HjncPl68NZT8AfuCeoifMfexLKmYGj5J1eXMjYny" #TOKEN LINK - https://developer.spotify.com/
+>>>>>>> 061a6bf5bd1b7736764e4ccec10ed01212c79c80
 def read_db():
     import sqlite3
     import pandas as pd
