@@ -9,11 +9,11 @@ from airflow.utils.dates import days_ago
 # Import functions from other python files (scripts)
 #from spotify_etl import spotify_etl
 #from get_songs import get_songs
-from get_songs import make_db
+#from get_songs import make_db
 from recommendations import read_db
 from recommendations import make_rec
 from recommendations import make_db
-from spotify_etl import spotify_etl
+#from spotify_etl import spotify_etl
 from etl import get_songs
 
 default_args = {

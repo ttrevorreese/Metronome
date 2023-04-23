@@ -8,7 +8,7 @@ import datetime
 import sqlite3
 
 USER_ID = "reesespieces07" 
-TOKEN = "BQDjb_jde9qYQOuv0WPCcHF1rWAyoJacLu17J2fodpYKB2w7eGa3zNNvphIEXf_pH_o8DJurYhA_36iN1baR2MV5QloGtUb-xOzkaStwADlM68AyCjs8ESlbiJn9tNnB6QQT2LP2JC-lGo9WIBYjKxWkGWSdWK7TTG6WdPfQittC9ikIiXaOtCP2V_OZozRDTgbwdzKXDVsD0bn1ONaqDQgpPKMrjbwjQJCUm3lcGVJml1dSngmTpIvlGtVBeYMrSOzmSk2NJ9yPI9Ac7mHSnpNTeaQ--kyTs7xo70XkTlOWZY-oM-B90ibxzXONAH1PIFWeyaIUnVBIgxEEYliIA4wHTQ5-tHiK" #TOKEN LINK - https://developer.spotify.com/
+TOKEN = "BQC7NHaIwubN2-oPpxbK5zBMQVg5uqGE8U1TTcWIbtEA2I9lEJwGhjz4BE9vcgD3SK_oVI-n_uR3a_h9D1XoZghKw_KiJlRO-XhHPEeZ994wIh6EhmG6DldOY7Z7B1qYu5VLp-HrV_36YNAmW0nJVt9HY1Dg8cQbWkMoZFWqgjUfNZIyvtTdrrYpHrI_yQ8VrreQdZ9Efozf7FR45UYk_g-9GV4QoU-p1VMNuXzADlbW1GNxQ0Og1PicIIs1dsy1VSMCdBdSLxXUifWuDkA2mFIJLJMaWzSRjS_Pojep6-5khpK-fgR2cmw4HjncPl68NZT8AfuCeoifMfexLKmYGj5J1eXMjYny" #TOKEN LINK - https://developer.spotify.com/
 limit = 50
 
 # Creating an function to be used in other python files

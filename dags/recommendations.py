@@ -7,7 +7,7 @@ import json
 from datetime import datetime
 import datetime 
 import sqlite3
-TOKEN = "BQDjb_jde9qYQOuv0WPCcHF1rWAyoJacLu17J2fodpYKB2w7eGa3zNNvphIEXf_pH_o8DJurYhA_36iN1baR2MV5QloGtUb-xOzkaStwADlM68AyCjs8ESlbiJn9tNnB6QQT2LP2JC-lGo9WIBYjKxWkGWSdWK7TTG6WdPfQittC9ikIiXaOtCP2V_OZozRDTgbwdzKXDVsD0bn1ONaqDQgpPKMrjbwjQJCUm3lcGVJml1dSngmTpIvlGtVBeYMrSOzmSk2NJ9yPI9Ac7mHSnpNTeaQ--kyTs7xo70XkTlOWZY-oM-B90ibxzXONAH1PIFWeyaIUnVBIgxEEYliIA4wHTQ5-tHiK"  #can be imported from the other file
+TOKEN = "BQC7NHaIwubN2-oPpxbK5zBMQVg5uqGE8U1TTcWIbtEA2I9lEJwGhjz4BE9vcgD3SK_oVI-n_uR3a_h9D1XoZghKw_KiJlRO-XhHPEeZ994wIh6EhmG6DldOY7Z7B1qYu5VLp-HrV_36YNAmW0nJVt9HY1Dg8cQbWkMoZFWqgjUfNZIyvtTdrrYpHrI_yQ8VrreQdZ9Efozf7FR45UYk_g-9GV4QoU-p1VMNuXzADlbW1GNxQ0Og1PicIIs1dsy1VSMCdBdSLxXUifWuDkA2mFIJLJMaWzSRjS_Pojep6-5khpK-fgR2cmw4HjncPl68NZT8AfuCeoifMfexLKmYGj5J1eXMjYny" #TOKEN LINK - https://developer.spotify.com/
 def read_db():
     import sqlite3
     import pandas as pd
@@ -58,7 +58,7 @@ def make_rec(song_df):
     #Put your token after the word bearer in the line above
     json_response = response.json()
 
-    # uris = []
+    uris = []
     song_name = []
     name = []
     #r = requests.get("https://api.spotify.com/v1/me/player/recently-played?limit={limit}&after={time}".format(time=yesterday_unix_timestamp, limit = limit), headers = input_variables)
@@ -69,16 +69,14 @@ def make_rec(song_df):
     timestamps = []
     artistid = []
 
-    for song in json_response['tracks']:
-        song_names.append(song["track"]["name"])
-        artist_names.append(song["track"]["album"]["artists"][0]["name"])
-        played_at_list.append(song["played_at"])
-        timestamps.append(song["played_at"][0:10])
-        artistid.append(song["track"]["album"]['artists'][0]['id'])
-                # uris.append(i)
-                # print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
-                # song_name.append(i['name'])
-                # name.append(i['artists'][0]['name'])
+    for i in json_response['tracks']:
+        # song_names.append(song["name"])
+        # artist_names.append(song["album"]["artists"][0]["name"])
+        # artistid.append(song["album"]['artists'][0]['id'])
+                uris.append(i)
+                print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
+                song_name.append(i['name'])
+                name.append(i['artists'][0]['name'])
 
     # Create a dictionary from the song_name and name lists
     song_dict = {"Artist Name": name, "Song Name": song_name}
