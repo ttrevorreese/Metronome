@@ -1,4 +1,3 @@
-
 import sqlalchemy
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
@@ -7,7 +6,7 @@ import json
 from datetime import datetime
 import datetime 
 import sqlite3
-TOKEN = "BQDjb_jde9qYQOuv0WPCcHF1rWAyoJacLu17J2fodpYKB2w7eGa3zNNvphIEXf_pH_o8DJurYhA_36iN1baR2MV5QloGtUb-xOzkaStwADlM68AyCjs8ESlbiJn9tNnB6QQT2LP2JC-lGo9WIBYjKxWkGWSdWK7TTG6WdPfQittC9ikIiXaOtCP2V_OZozRDTgbwdzKXDVsD0bn1ONaqDQgpPKMrjbwjQJCUm3lcGVJml1dSngmTpIvlGtVBeYMrSOzmSk2NJ9yPI9Ac7mHSnpNTeaQ--kyTs7xo70XkTlOWZY-oM-B90ibxzXONAH1PIFWeyaIUnVBIgxEEYliIA4wHTQ5-tHiK"  #can be imported from the other file
+TOKEN = "BQC9vQeypOtEkQvXOWlPWaq1y136iG3PTlURzhxaP3F-ALDGe2wnO23paN9CdlLak93gGjNFQ8T1g519A03BVDGsOvGr9nsRB50ainZzg_l5zUPqKyNOZipnQ7jYf8yizvyT4kZvTdeJ0K3swE1-BAxW_Z0xsdxes_2m9iFEBCgFb8GC6Pz-_G544cwsM4v_ses4sz7mxA7tSU86Yp6fVRXU8iSbwdqSJkGk9g6o2zWprIGhISq_XiySSJglttzDpEWP1X4q0tc7lVD1x3BbUaLNmgd-NsX3TM2mOoozY-1tNLNl3rV_c16FuWE4pJ87qE9VnAQVjJj1ZGpNZd2z9NPuUY2xZLxQ" #TOKEN LINK - https://developer.spotify.com/
 def read_db():
     import sqlite3
     import pandas as pd
@@ -58,7 +57,7 @@ def make_rec(song_df):
     #Put your token after the word bearer in the line above
     json_response = response.json()
 
-    # uris = []
+    uris = []
     song_name = []
     name = []
     #r = requests.get("https://api.spotify.com/v1/me/player/recently-played?limit={limit}&after={time}".format(time=yesterday_unix_timestamp, limit = limit), headers = input_variables)
@@ -69,16 +68,14 @@ def make_rec(song_df):
     timestamps = []
     artistid = []
 
-    for song in json_response['tracks']:
-        song_names.append(song["track"]["name"])
-        artist_names.append(song["track"]["album"]["artists"][0]["name"])
-        played_at_list.append(song["played_at"])
-        timestamps.append(song["played_at"][0:10])
-        artistid.append(song["track"]["album"]['artists'][0]['id'])
-                # uris.append(i)
-                # print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
-                # song_name.append(i['name'])
-                # name.append(i['artists'][0]['name'])
+    for i in json_response['tracks']:
+        # song_names.append(song["name"])
+        # artist_names.append(song["album"]["artists"][0]["name"])
+        # artistid.append(song["album"]['artists'][0]['id'])
+                uris.append(i)
+                print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
+                song_name.append(i['name'])
+                name.append(i['artists'][0]['name'])
 
     # Create a dictionary from the song_name and name lists
     song_dict = {"Artist Name": name, "Song Name": song_name}
