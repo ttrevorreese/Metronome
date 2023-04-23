@@ -8,11 +8,13 @@ from sqlalchemy import create_engine
 from airflow.utils.dates import days_ago
 # Import functions from other python files (scripts)
 #from spotify_etl import spotify_etl
-from get_songs import get_songs
+#from get_songs import get_songs
 from get_songs import make_db
 from recommendations import read_db
 from recommendations import make_rec
 from recommendations import make_db
+from spotify_etl import spotify_etl
+from etl import get_songs
 
 default_args = {
     'owner': 'airflow',
@@ -31,13 +33,20 @@ dag = DAG(
     description='Spotify ETL Process and Song Recommendations',
     schedule_interval=dt.timedelta(minutes=50),
 )
-    
+
 def play_history():
-    print("Started song history extraction.")
+    print("Started ETL process.")
     df=get_songs()
     conn = BaseHook.get_connection('postgre_sql')
     engine = create_engine(f'postgresql://{conn.login}:{conn.password}@{conn.host}:{conn.port}/{conn.schema}')
     df.to_sql('song_history', engine, if_exists='replace')
+
+# def play_history():
+#     print("Started song history extraction.")
+#     df=get_songs()
+#     conn = BaseHook.get_connection('postgre_sql')
+#     engine = create_engine(f'postgresql://{conn.login}:{conn.password}@{conn.host}:{conn.port}/{conn.schema}')
+#     df.to_sql('song_history', engine, if_exists='replace')
     
 def recommendations():
     print("Started recommendation creation.")

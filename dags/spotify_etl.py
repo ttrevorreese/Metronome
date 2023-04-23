@@ -8,7 +8,7 @@ from datetime import datetime
 import datetime
 
 USER_ID = "reesespieces07" 
-TOKEN = "BQDpd_HeqC6Aa41pQCB_QB9SReweqlfC4kVjgecmNdpb0TH6ujdmcbohjkvkInJ5wBj6pVgq2VdHbFG_k9kxuw35EaJI5aOjhgt4dyMV735XH7w5-6fY7JX1JnCJs0cTq1i30OE6TTSMVCMSloK9H06USO53ueIo9VPnYw58Rn-m7Tf6z1Ic0vZ-x1N4Tg4ZyAoQce7Wc4RIBhf2Ek2eAqhlrwEKgM4m7B5MJ41-xW0Eshy5Y3xs11nYVUL_ZJ2p_cJ5qhOQhWuYNwVS9gyFdhNUXPNKaJ1I9Hb2kij8ianU0NewCYg_gN9DmADSYnTSvIVZJNAFx7tLFM8MhB-IYmsculOBKX3B"
+TOKEN = "BQDjb_jde9qYQOuv0WPCcHF1rWAyoJacLu17J2fodpYKB2w7eGa3zNNvphIEXf_pH_o8DJurYhA_36iN1baR2MV5QloGtUb-xOzkaStwADlM68AyCjs8ESlbiJn9tNnB6QQT2LP2JC-lGo9WIBYjKxWkGWSdWK7TTG6WdPfQittC9ikIiXaOtCP2V_OZozRDTgbwdzKXDVsD0bn1ONaqDQgpPKMrjbwjQJCUm3lcGVJml1dSngmTpIvlGtVBeYMrSOzmSk2NJ9yPI9Ac7mHSnpNTeaQ--kyTs7xo70XkTlOWZY-oM-B90ibxzXONAH1PIFWeyaIUnVBIgxEEYliIA4wHTQ5-tHiK"
 print('started')
 # Creating an function to be used in other python files
 def return_dataframe(): 
@@ -48,7 +48,7 @@ def return_dataframe():
         "timestamp" : timestamps,
         'artistid' : artistid
     }
-    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp"])
+    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid"])
     return song_df
 
 def Data_Quality(load_df):

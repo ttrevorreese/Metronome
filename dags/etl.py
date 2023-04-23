@@ -50,10 +50,19 @@ def get_songs():
         "timestamp" : timestamps,
         'artistid' : artistid
     }
+    
     song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid"])
     make_db(song_df)
 
-def make_db(song_df):
+    #Applying transformation logic
+    Transformed_df=song_df.groupby(['timestamp','artist_name'],as_index = False).count()
+    Transformed_df.rename(columns ={'played_at':'count'}, inplace=True)
+    #Creating a Primary Key based on Timestamp and artist name
+    Transformed_df["ID"] = Transformed_df['timestamp'].astype(str) +"-"+ Transformed_df["artist_name"]
+
+    return Transformed_df[['ID','timestamp','artist_name','count']]
+
+def make_db(Transformed_df):
     import sqlite3
     import pandas as pd
 
@@ -61,7 +70,7 @@ def make_db(song_df):
     conn = sqlite3.connect('song_history.db')
 
     # Write the DataFrame to an SQLite table
-    song_df.to_sql('song_history', conn, if_exists='replace', index=False)
+    Transformed_df.to_sql('song_history', conn, if_exists='replace', index=False)
 
     # Commit changes and close the connection
     conn.commit()
