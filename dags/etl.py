@@ -33,25 +33,29 @@ def get_songs():
     played_at_list = []
     timestamps = []
     artistid = []
+    songid = []
 
-    # Extracting only the relevant bits of data from the json object      
+    # Extracting only the relevant bits of data from the json object 
+
     for song in data["items"]:
+
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at_list.append(song["played_at"])
         timestamps.append(song["played_at"][0:10])
         artistid.append(song["track"]["album"]['artists'][0]['id'])
+        songid.append(song["track"]["id"])
 
-    # Prepare a dictionary in order to turn it into a pandas dataframe below       
+    # Prepare a dictionary in order to turn it into a pandas dataframe below
     song_dict = {
         "song_name" : song_names,
         "artist_name": artist_names,
         "played_at" : played_at_list,
         "timestamp" : timestamps,
-        'artistid' : artistid
+        'artistid' : artistid,
+        'songid' : songid
     }
-    
-    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid"])
+    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid", 'songid'])
     make_db(song_df)
 
     #Applying transformation logic

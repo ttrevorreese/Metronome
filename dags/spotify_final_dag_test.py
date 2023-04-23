@@ -65,6 +65,8 @@ with dag:
             artist_name VARCHAR(200),
             played_at VARCHAR(200),
             timestamp VARCHAR(200),
+            artistid VARCHAR(200),
+            songid VARCHAR(200),
             CONSTRAINT primary_key_constraint PRIMARY KEY (played_at)
         )
         """
