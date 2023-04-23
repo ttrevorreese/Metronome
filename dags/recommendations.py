@@ -58,15 +58,27 @@ def make_rec(song_df):
     #Put your token after the word bearer in the line above
     json_response = response.json()
 
-    uris = []
+    # uris = []
     song_name = []
     name = []
+    #r = requests.get("https://api.spotify.com/v1/me/player/recently-played?limit={limit}&after={time}".format(time=yesterday_unix_timestamp, limit = limit), headers = input_variables)
+    #data = r.json()
+    song_names = []
+    artist_names = []
+    played_at_list = []
+    timestamps = []
+    artistid = []
 
-    for i in json_response['tracks']:
-                uris.append(i)
-                print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
-                song_name.append(i['name'])
-                name.append(i['artists'][0]['name'])
+    for song in json_response['tracks']:
+        song_names.append(song["track"]["name"])
+        artist_names.append(song["track"]["album"]["artists"][0]["name"])
+        played_at_list.append(song["played_at"])
+        timestamps.append(song["played_at"][0:10])
+        artistid.append(song["track"]["album"]['artists'][0]['id'])
+                # uris.append(i)
+                # print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
+                # song_name.append(i['name'])
+                # name.append(i['artists'][0]['name'])
 
     # Create a dictionary from the song_name and name lists
     song_dict = {"Artist Name": name, "Song Name": song_name}
@@ -75,13 +87,16 @@ def make_rec(song_df):
     rec_df = pd.DataFrame(song_dict)
 
     #Applying transformation logic
-    Transformed_df=song_df.groupby(['song_name','name'],as_index = False).count()
+    Transformed_df=song_df.groupby(['timestamp','artist_name'],as_index = False).count()
+    Transformed_df.rename(columns ={'played_at':'count'}, inplace=True)
+    #Creating a Primary Key based on Timestamp and artist name
+    Transformed_df["ID"] = Transformed_df['timestamp'].astype(str) +"-"+ Transformed_df["artist_name"]
 
     # Print the resulting DataFrame
     print(rec_df)
     make_db(rec_df)
 
-    return Transformed_df[['ID','timestamp','artist_name','count']]
+    return Transformed_df[['song_name','artist_name']]
 
 def make_db(rec_df):
        
