@@ -24,9 +24,6 @@ def read_db():
     # Print the DataFrame
     make_rec(song_df)
     
-
-
-
 def make_rec(song_df):
     import requests
 
@@ -77,12 +74,14 @@ def make_rec(song_df):
     # Convert the dictionary into a DataFrame
     rec_df = pd.DataFrame(song_dict)
 
+    #Applying transformation logic
+    Transformed_df=song_df.groupby(['song_name','name'],as_index = False).count()
+
     # Print the resulting DataFrame
     print(rec_df)
     make_db(rec_df)
 
-
-
+    return Transformed_df[['ID','timestamp','artist_name','count']]
 
 def make_db(rec_df):
        
