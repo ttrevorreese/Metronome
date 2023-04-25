@@ -43,7 +43,7 @@ import json
 endpoint_url = f"https://api.spotify.com/v1/users/{user_id}/playlists"
 request_body = json.dumps({
           "name": "Metronome",
-          "description": "This playlist was generated",
+          "description": "This playlist was generated in a data pipeline!",
           "public": False # let's keep it between us - for now
         })
 response = requests.post(url = endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
