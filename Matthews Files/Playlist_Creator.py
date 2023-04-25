@@ -69,6 +69,6 @@ request_body = json.dumps({
           "uris" : uris
         })
 response = requests.post(url = last_endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
-                        "Authorization":"Bearer BQDQm4lfi1m11qczHmq7CE2OtE9A22c1cQJoheGAB0Bg3C0eBrwyGGCe7xVZoVHGtHaclraFxJY-ISDbyx78k35iCSwu9bk9_cga5wvt48ZWVTUzUCXPdhpgOnYYMqhKaJ02jIvOQkDJ1ZeYi5npZPNm-DaMENfGj9k6PFBRjU7fS0ZFhaUGyeYtU2mTzQkhqRQH0valpIbMW2cj1Cn-CqAt_woKcErlyMKP9gZXnX4NG7368ZisjiNBeNnRjvrCOpSJ3_Yugm6-E7GiDLI-rSnG0t5QPwCWFlTZaisDf-hLjJqf7fLzT5xyw1WZgzFMYTlq_85c0kW1SH-5jkN9hIitS58kBYKhmkzZhZWZVBllRjw"})
+                        "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN})
 
 print(response.status_code)     #IF CODE 201 IS DISPLAYED IT MEANS IT WORKS
