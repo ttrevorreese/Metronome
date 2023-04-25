@@ -1,10 +1,8 @@
 import requests
 
 endpoint_url = "https://api.spotify.com/v1/recommendations?"
-TOKEN = ''   #TOKEN
-user_id = '' #USER ID
-
-
+TOKEN = 'BQC5uC4I5YtM__ke3gkmLeJlYYaWjqMQT2aDU6Eqi1TmBft73rRn8rFuUb8bfz6ufyFmrs-a38rhjmRzKIp7bdGknSTd1DhoCQqpVbP1NJJYVxYqt5BuvRRj_jzBCiE8fQs3Bi4ordAar5z5WVJCZTkDvEGnjXMOeDBTBc5fSxVXyCeRqZ6-3quEYhjH64paJmWriCdz9R2ri8qOO6Hv_f9g3TkPiGacJtNfqSxfwED3_4_lABdiode7kpgVjBJzu2vw8-vNPK3RC-KL_Z2DwP_QcUyNQCIIriP9KK7-wlMyK4Q-L0GiKPCvfQ-HG0EkPXOqTgBTqYIDChfrfOD4xPE5vrZOvyOV'   #TOKEN
+user_id = 'reesespieces07' #USER ID
 
 ########################################################################################################
 
@@ -22,19 +20,13 @@ query = f'{endpoint_url}limit={limit}&market={market}&seed_genres={seed_genres}&
 query += f'&seed_artists={seed_artists}'
 query += f'&seed_tracks={seed_tracks}'
 
-
-
 query = f'{endpoint_url}limit={limit}&market={market}&seed_genres={seed_genres}&target_danceability={target_danceability}'
 
 response =requests.get(query, 
                headers={"Content-Type":"application/json", 
                         "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN)})
 
-
-
-
 json_response = response.json()
-
 
 uris = [] 
 
@@ -42,26 +34,22 @@ for i in json_response['tracks']:
             uris.append(i['uri'])
             print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
             
-        
- ############################################################
+############################################################
 
-#THIS IS THE PART WE CAN ADD ON TO OUR PREVIOSU RECCOMENDATION FILE
+#THIS IS THE PART WE CAN ADD ON TO OUR PREVIOUS RECCOMENDATION FILE
             
 import json
 
 endpoint_url = f"https://api.spotify.com/v1/users/{user_id}/playlists"
 request_body = json.dumps({
-          "name": "Indie bands like Franz Ferdinand but using Python",
-          "description": "My first programmatic playlist, yooo!",
+          "name": "Metronome",
+          "description": "This playlist was generated",
           "public": False # let's keep it between us - for now
         })
 response = requests.post(url = endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
                         "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN)})
 
-
-
 playlist_id = response.json()['id']
-
 
 last_endpoint_url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
 
@@ -69,6 +57,6 @@ request_body = json.dumps({
           "uris" : uris
         })
 response = requests.post(url = last_endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
-                        "Authorization":"Bearer BQDQm4lfi1m11qczHmq7CE2OtE9A22c1cQJoheGAB0Bg3C0eBrwyGGCe7xVZoVHGtHaclraFxJY-ISDbyx78k35iCSwu9bk9_cga5wvt48ZWVTUzUCXPdhpgOnYYMqhKaJ02jIvOQkDJ1ZeYi5npZPNm-DaMENfGj9k6PFBRjU7fS0ZFhaUGyeYtU2mTzQkhqRQH0valpIbMW2cj1Cn-CqAt_woKcErlyMKP9gZXnX4NG7368ZisjiNBeNnRjvrCOpSJ3_Yugm6-E7GiDLI-rSnG0t5QPwCWFlTZaisDf-hLjJqf7fLzT5xyw1WZgzFMYTlq_85c0kW1SH-5jkN9hIitS58kBYKhmkzZhZWZVBllRjw"})
+                        "Authorization":"Bearer {token}".format(token=TOKEN)})
 
-print(response.status_code)     #IF CODE 201 IS DISPLAYED IT MEANS IT WORKS
+print(response.status_code)  # IF CODE 201 IS DISPLAYED IT MEANS IT WORKS
