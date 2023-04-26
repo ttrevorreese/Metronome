@@ -4,13 +4,13 @@ from airflow.operators.python import PythonOperator
 from airflow.hooks.base import BaseHook
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
-from sqlalchemy import create_engine
 from airflow.utils.dates import days_ago
-import time
+from sqlalchemy import create_engine
 # Import functions from other python files (scripts)
 from extract import get_songs
 from playlist_generator import get_seed
 
+#Settings for the dag
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
@@ -47,6 +47,7 @@ def playlist_generator():
 
 # Create a delay when executing the playlist
 def my_task_func():
+    import time
     time.sleep(300)
     print("Task executed after a 5-minute delay.")
 

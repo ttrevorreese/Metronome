@@ -4,8 +4,8 @@ from sqlalchemy.orm import sessionmaker
 import requests
 import json
 from datetime import datetime
-import sqlite3
 import time
+import sqlite3
 
 def get_seed():
   # Open the file and read its contents into a list of strings
@@ -22,17 +22,15 @@ def get_seed():
   get_recommendations(random_song,random_artist)
 
 def get_recommendations(random_song, random_artist):
+  #TOKEN LINK - https://developer.spotify.com/
   endpoint_url = "https://api.spotify.com/v1/recommendations?"
-  ### REPLACE WITH YOUR USERNAME AND GENERATED API TOKEN
   user_id = "mandevseahra_" 
-  ### TOKEN LINK - https://developer.spotify.com/
   TOKEN = "BQBpcrX66xe_xXS0PI-Sza2zuZMv9WjPzR8ASlb4O_y0E8ZMYFcial1sixLXIr49Dgb2laqn3cc-ffg4f_Z8QnHV9HpYseAbFPdSBldNUFDxG9ofN3TVcjz96-qoUbucK2t-FN1MxpAt1Y9BJkfUsVrpov0GB6Sa2MlrfMK8DKN3d3JNsyhdeTBdC7dYcK0wrMBKMzdUo9wDoNkCgnWgno7kVzD_xa9VtUw1BGYqVizYoioA2tyezc9ECYMjRdYuhTprD4nHrSzIzRxLcrXHzDUh8vrx6wVetoIACqc71jCaBQ_vrX5HHSHCP2AfHG95_LRU3DjWTKAH7hyG3VqDucud5D_swgk"
-# Our filters
+# OUR FILTERS
   limit= 50
   market="US"
-  # Extra unpassed parameters
-  #seed_genres="hip-hop"
-  #seed_artists = ''
+  seed_genres="hip-hop"
+  seed_artists = ''
   target_danceability=0.9
   seed_tracks= random_song # ID for Cassius by Foals
   query = f'{endpoint_url}limit={limit}&market={market}&target_danceability={target_danceability}'
@@ -45,7 +43,7 @@ def get_recommendations(random_song, random_artist):
 
   json_response = response.json()
 
-  #creating empty arrays
+  #creating arrays with no value temporarily
   uris = []
   name = []
   song_name = []
@@ -84,22 +82,22 @@ def make_db(rec_df):
   conn.commit()
   conn.close()
 
-# Creating a function with 3 parameters            
-def make_playlist(user_id, TOKEN,uris, random_artist):
+#Creating a function with 4 parameters            
+def make_playlist(user_id, TOKEN,uris,random_artist):
   
-  # Making the playlist
+  #MAKING THE PLAYLIST
   endpoint_url = f"https://api.spotify.com/v1/users/{user_id}/playlists"
   request_body = json.dumps({
             "name": "{artist} Style Playlist".format(artist = random_artist),
             "description": "Playlist created by Metronome",
-            "public": False # can change to 'True' for playlist privacy to be set to public
+            "public": False # let's keep it between us - for now
           })
   response = requests.post(url = endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
                           "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN)})
   
   playlist_id = response.json()['id']
 
-  # Filling out the playlist using recommendations
+  #FILLING OUT THE PLAYLIST
   last_endpoint_url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
 
   request_body = json.dumps({
@@ -108,11 +106,14 @@ def make_playlist(user_id, TOKEN,uris, random_artist):
   response = requests.post(url = last_endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
                           "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN)})
 
+  #if statement for displaying the status code for the API call
   if response.status_code == 201:
+      #Print a user friendly message to determine if successful or not
       print("Run successful - Code: {code}".format(code=response.status_code))
   else:
       print("Unsuccessful run - Error Code: {code}".format(code=response.status_code))
-  
+
+#Function to start the generator with delay
 def start():
     Time = datetime.now()
     print("Starting program at: {time}".format(time=Time))
