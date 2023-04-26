@@ -6,13 +6,12 @@ import json
 from datetime import datetime
 import datetime 
 import sqlite3
-
+#TOKEN LINK - https://developer.spotify.com/
 USER_ID = "reesespieces07" 
-TOKEN = "BQAlhTNCsa7UUlBpi1T7tgr6pBeW4IiJv_o0IM83-_qiZ_IqLZ8V0kvwUFD5YrTEH7NrXCHFKCJ2m_HARLbPINIMrxCX4_rSI4gxWveWYnVEXlD8peCytglBIWxdSFl4IOcdGHrGwLH8v42u8BkO_ZcQB4h_obZOJqtji6_nOx5AHng-ncWFbS5P5PnopuaKifZ6FSbWrRgDgDUbfq_b9bbVkXQveN13R3yo1rRvqrCEQG52-UMWYI8qFgu1E9I1l-K9BhXBCz8Q68CwRl5yNoCy1_16U-oiJwgTPiT_L8IO5Lqz962Lt8MVsIt7fWtfU5jJZvcbkaRbcaX2bO3DwH87YU_QmpEV" #TOKEN LINK - https://developer.spotify.com/
+TOKEN = "BQCRWvjv_-trzxW02y3UaJkcf5EUFf7FANWiyJx8rI1Gw8qoS9yAWkpRd0_tKP0jq-RwAnVQRTlyhazU1sq4-aAUyxneVvjWXtHtvqT0RoA02GGWQ5UEENjzlwwSW0cBMevVziCmqOrCIYqkgJeCxfSushl8psM-aFeVfhIx0WcTQnRwfnyxwbbL_gkCRrQbEsblCh2XDGBAj_5pbNWxTQM6i-vG76Ykq3mVH_DgxLk09RZEY05jrQkDlV1GmQrdjtsLPwuyjkYWqQPCVW85LNulJYrubUxhtzqdzDoBNoMcgilqFdEraLI54Il--6DkJxXk8nLsqUKxNwsLUkX9vGfb91FEAZJT"
 limit = 50
 
 # Creating an function to be used in other python files
-
 def get_songs():
     input_variables = {
         "Accept" : "application/json",
@@ -36,9 +35,7 @@ def get_songs():
     songid = []
 
     # Extracting only the relevant bits of data from the json object 
-
     for song in data["items"]:
-
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at_list.append(song["played_at"])
@@ -67,9 +64,6 @@ def get_songs():
     return Transformed_df[['ID','timestamp','artist_name','count']]
 
 def make_db(Transformed_df):
-    import sqlite3
-    import pandas as pd
-
     # Create a connection to the SQLite database
     conn = sqlite3.connect('song_history.db')
 

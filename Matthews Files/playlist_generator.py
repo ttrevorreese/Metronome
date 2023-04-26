@@ -1,7 +1,7 @@
 import requests
 
 endpoint_url = "https://api.spotify.com/v1/recommendations?"
-TOKEN = 'BQC5uC4I5YtM__ke3gkmLeJlYYaWjqMQT2aDU6Eqi1TmBft73rRn8rFuUb8bfz6ufyFmrs-a38rhjmRzKIp7bdGknSTd1DhoCQqpVbP1NJJYVxYqt5BuvRRj_jzBCiE8fQs3Bi4ordAar5z5WVJCZTkDvEGnjXMOeDBTBc5fSxVXyCeRqZ6-3quEYhjH64paJmWriCdz9R2ri8qOO6Hv_f9g3TkPiGacJtNfqSxfwED3_4_lABdiode7kpgVjBJzu2vw8-vNPK3RC-KL_Z2DwP_QcUyNQCIIriP9KK7-wlMyK4Q-L0GiKPCvfQ-HG0EkPXOqTgBTqYIDChfrfOD4xPE5vrZOvyOV'   #TOKEN
+TOKEN = "BQCRWvjv_-trzxW02y3UaJkcf5EUFf7FANWiyJx8rI1Gw8qoS9yAWkpRd0_tKP0jq-RwAnVQRTlyhazU1sq4-aAUyxneVvjWXtHtvqT0RoA02GGWQ5UEENjzlwwSW0cBMevVziCmqOrCIYqkgJeCxfSushl8psM-aFeVfhIx0WcTQnRwfnyxwbbL_gkCRrQbEsblCh2XDGBAj_5pbNWxTQM6i-vG76Ykq3mVH_DgxLk09RZEY05jrQkDlV1GmQrdjtsLPwuyjkYWqQPCVW85LNulJYrubUxhtzqdzDoBNoMcgilqFdEraLI54Il--6DkJxXk8nLsqUKxNwsLUkX9vGfb91FEAZJT"
 user_id = 'reesespieces07' #USER ID
 
 ########################################################################################################
