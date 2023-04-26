@@ -1,13 +1,10 @@
 import requests
-import sqlalchemy
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
 import requests
 import json
 from datetime import datetime
-import datetime
 import sqlite3
-import random
 import time
 
 def get_seed():
@@ -115,7 +112,6 @@ def make_playlist(user_id, TOKEN,uris,random_artist):
       print("Unsuccessful run - Error Code: {code}".format(code=response.status_code))
   
 def start():
-    from datetime import datetime
     Time = datetime.now()
     print("Starting program at: {time}".format(time=Time))
     time.sleep(5)

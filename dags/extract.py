@@ -1,8 +1,6 @@
-import sqlalchemy
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
 import requests
-import json
 from datetime import datetime
 import datetime 
 import sqlite3
@@ -12,7 +10,6 @@ TOKEN = "BQBpcrX66xe_xXS0PI-Sza2zuZMv9WjPzR8ASlb4O_y0E8ZMYFcial1sixLXIr49Dgb2laq
 limit = 50
 
 # Creating an function to be used in other python files
-
 def get_songs():
     input_variables = {
         "Accept" : "application/json",
@@ -36,7 +33,6 @@ def get_songs():
     songid = []
 
     # Extracting only the relevant bits of data from the json object 
-      
     for song in data["items"]:
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
@@ -65,9 +61,6 @@ def get_songs():
     make_db(song_df)
 
 def make_db(song_df):
-    import sqlite3
-    import pandas as pd
-
     # Create a connection to the SQLite database
     conn = sqlite3.connect('song_history.db')
 
@@ -78,4 +71,5 @@ def make_db(song_df):
     conn.commit()
     conn.close()
 
+#Call the get_songs function
 get_songs()
