@@ -22,9 +22,11 @@ def get_seed():
   get_recommendations(random_song,random_artist)
 
 def get_recommendations(random_song, random_artist):
-  #TOKEN LINK - https://developer.spotify.com/
   endpoint_url = "https://api.spotify.com/v1/recommendations?"
-  user_id = "mandevseahra_" 
+  ### REPLACE USERNAME WITH YOURS
+  USER_ID = "mandevseahra_" 
+  ### REPLACE TOKEN WITH YOURS FROM THE LINK BELOW
+  ### TOKEN LINK - https://developer.spotify.com/
   TOKEN = "BQBpcrX66xe_xXS0PI-Sza2zuZMv9WjPzR8ASlb4O_y0E8ZMYFcial1sixLXIr49Dgb2laqn3cc-ffg4f_Z8QnHV9HpYseAbFPdSBldNUFDxG9ofN3TVcjz96-qoUbucK2t-FN1MxpAt1Y9BJkfUsVrpov0GB6Sa2MlrfMK8DKN3d3JNsyhdeTBdC7dYcK0wrMBKMzdUo9wDoNkCgnWgno7kVzD_xa9VtUw1BGYqVizYoioA2tyezc9ECYMjRdYuhTprD4nHrSzIzRxLcrXHzDUh8vrx6wVetoIACqc71jCaBQ_vrX5HHSHCP2AfHG95_LRU3DjWTKAH7hyG3VqDucud5D_swgk"
 # OUR FILTERS
   limit= 50

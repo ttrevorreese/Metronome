@@ -4,8 +4,10 @@ import requests
 from datetime import datetime
 import sqlite3
 import datetime 
-#TOKEN LINK - https://developer.spotify.com/
+### REPLACE USERNAME WITH YOURS
 USER_ID = "mandevseahra_" 
+### REPLACE TOKEN WITH YOURS FROM THE LINK BELOW
+### TOKEN LINK - https://developer.spotify.com/
 TOKEN = "BQBpcrX66xe_xXS0PI-Sza2zuZMv9WjPzR8ASlb4O_y0E8ZMYFcial1sixLXIr49Dgb2laqn3cc-ffg4f_Z8QnHV9HpYseAbFPdSBldNUFDxG9ofN3TVcjz96-qoUbucK2t-FN1MxpAt1Y9BJkfUsVrpov0GB6Sa2MlrfMK8DKN3d3JNsyhdeTBdC7dYcK0wrMBKMzdUo9wDoNkCgnWgno7kVzD_xa9VtUw1BGYqVizYoioA2tyezc9ECYMjRdYuhTprD4nHrSzIzRxLcrXHzDUh8vrx6wVetoIACqc71jCaBQ_vrX5HHSHCP2AfHG95_LRU3DjWTKAH7hyG3VqDucud5D_swgk"
 limit = 50
 
