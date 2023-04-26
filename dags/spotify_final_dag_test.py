@@ -1,13 +1,15 @@
 import datetime as dt
 from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
-from airflow.hooks.base_hook import BaseHook
+from airflow.operators.python import PythonOperator
+from airflow.hooks.base import BaseHook
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from sqlalchemy import create_engine
-
 from airflow.utils.dates import days_ago
-from spotify_etl import spotify_etl
+import time
+# Import functions from other python files (scripts)
+from extract import get_songs
+from playlist_generator import get_seed
 
 default_args = {
     'owner': 'airflow',
@@ -21,19 +23,26 @@ default_args = {
 }
 
 dag = DAG(
-    'spotify_final_dag',
+    'spotify_recommendations',
     default_args=default_args,
-    description='Spotify ETL process 1-min',
-    schedule_interval=dt.timedelta(minutes=50),
+    description='Spotify ETL Process and Song Recommendations',
+    schedule=dt.timedelta(minutes=50),
 )
 
-def ETL():
-    print("started")
-    df=spotify_etl()
-    #print(df)
+def play_history():
+    print("Started ETL process.")
+    df=get_songs()
     conn = BaseHook.get_connection('postgre_sql')
     engine = create_engine(f'postgresql://{conn.login}:{conn.password}@{conn.host}:{conn.port}/{conn.schema}')
-    df.to_sql('my_played_tracks', engine, if_exists='replace')
+    df.to_sql('song_history', engine, if_exists='replace')
+
+def playlist_generator():
+    print("Creating playlist.")
+    get_seed()
+
+def my_task_func():
+    time.sleep(300)
+    print("Task executed after a 5-minute delay.")
 
 with dag:    
     create_table= PostgresOperator(
@@ -45,15 +54,29 @@ with dag:
             artist_name VARCHAR(200),
             played_at VARCHAR(200),
             timestamp VARCHAR(200),
+            artistid VARCHAR(200),
+            songid VARCHAR(200),
             CONSTRAINT primary_key_constraint PRIMARY KEY (played_at)
         )
         """
     )
 
-    run_etl = PythonOperator(
-        task_id='spotify_etl_final',
-        python_callable=ETL,
+    t2 = PythonOperator(
+        task_id='spotify_etl',
+        python_callable=play_history,
         dag=dag,
     )
 
-    create_table >> run_etl
+    t3 = PythonOperator(
+        task_id='playlist_generator',
+        python_callable=playlist_generator,
+        dag=dag
+    )
+
+    t4 = PythonOperator(
+        task_id='delay',
+        python_callable=my_task_func,
+        dag=dag
+    )
+
+    create_table >> t2 >> t3 >> t4

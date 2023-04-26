@@ -7,12 +7,10 @@ import requests
 from datetime import datetime
 import datetime
 
-
-
 USER_ID = "reesespieces07" 
-TOKEN = "BQBXIU8q-Lqq7W6SHh_ggqQ0SHH78Q5CFPErXAnEHLF8spZ16YDtQoQVLfCT1J60yW4onoJERIL3L60rJmbzdgwM2kQmb8wOug7ffFfLXhu7z00GheRBhziB4iiJV6sVzipdexyns3MgDxgWnUz0J62JDniVWeW1G3nMaFgWk4-1pPE9Zw835r1gSkw"
+TOKEN = "BQDjb_jde9qYQOuv0WPCcHF1rWAyoJacLu17J2fodpYKB2w7eGa3zNNvphIEXf_pH_o8DJurYhA_36iN1baR2MV5QloGtUb-xOzkaStwADlM68AyCjs8ESlbiJn9tNnB6QQT2LP2JC-lGo9WIBYjKxWkGWSdWK7TTG6WdPfQittC9ikIiXaOtCP2V_OZozRDTgbwdzKXDVsD0bn1ONaqDQgpPKMrjbwjQJCUm3lcGVJml1dSngmTpIvlGtVBeYMrSOzmSk2NJ9yPI9Ac7mHSnpNTeaQ--kyTs7xo70XkTlOWZY-oM-B90ibxzXONAH1PIFWeyaIUnVBIgxEEYliIA4wHTQ5-tHiK"
 print('started')
-# Creating an function to be used in other pyrhon files
+# Creating an function to be used in other python files
 def return_dataframe(): 
     input_variables = {
         "Accept" : "application/json",
@@ -32,6 +30,7 @@ def return_dataframe():
     artist_names = []
     played_at_list = []
     timestamps = []
+    artistid = []
 
     # Extracting only the relevant bits of data from the json object      
     for song in data["items"]:
@@ -39,15 +38,17 @@ def return_dataframe():
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at_list.append(song["played_at"])
         timestamps.append(song["played_at"][0:10])
+        artistid.append(song["track"]["album"]['artists'][0]['id'])
         
     # Prepare a dictionary in order to turn it into a pandas dataframe below       
     song_dict = {
         "song_name" : song_names,
         "artist_name": artist_names,
         "played_at" : played_at_list,
-        "timestamp" : timestamps
+        "timestamp" : timestamps,
+        'artistid' : artistid
     }
-    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp"])
+    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid"])
     return song_df
 
 def Data_Quality(load_df):
@@ -88,4 +89,3 @@ def spotify_etl():
     return (load_df)
 
 spotify_etl()
-

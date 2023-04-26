@@ -7,8 +7,8 @@ from datetime import datetime
 import datetime 
 import sqlite3
 
-USER_ID = "sayeed" 
-TOKEN = "BQC0j1IL50FTiv9gFDcNCsXSQQLs6W-tRO28UaTxSwHcYLllS5hIK4de4xJ7w9dRiLuO5NAd2VtnGDagiY0RBZaz9-AEp0Mn-FtEk8xtWmivPiuha-Q0ZKz8pn4hjdV7Qe8YpjcbiRHDJ4XjoMqEi2xeY-1fwkeu9Q3Lbo-uw9AXg-LYzgjy7GNxUFON4-lTWR4y7CKcuqXnlr-fCodPB8PL8MvrWtIkiULj3l_xZV9zRpS2e3PvHEzCqTD6CgzBEQKQBQk39Cxhb5zzaS1SVpZ4cAYan0achTWFwKdRMMjul7l3W1hdC6AAzOdlRqU5yeQil_73zRuEszjNcGPeZzZR_wcmqbB--cIiNYP9qb7JqH8" #TOKEN LINK - https://developer.spotify.com/
+USER_ID = "reesespieces07" 
+TOKEN = "BQDjb_jde9qYQOuv0WPCcHF1rWAyoJacLu17J2fodpYKB2w7eGa3zNNvphIEXf_pH_o8DJurYhA_36iN1baR2MV5QloGtUb-xOzkaStwADlM68AyCjs8ESlbiJn9tNnB6QQT2LP2JC-lGo9WIBYjKxWkGWSdWK7TTG6WdPfQittC9ikIiXaOtCP2V_OZozRDTgbwdzKXDVsD0bn1ONaqDQgpPKMrjbwjQJCUm3lcGVJml1dSngmTpIvlGtVBeYMrSOzmSk2NJ9yPI9Ac7mHSnpNTeaQ--kyTs7xo70XkTlOWZY-oM-B90ibxzXONAH1PIFWeyaIUnVBIgxEEYliIA4wHTQ5-tHiK" #TOKEN LINK - https://developer.spotify.com/
 limit = 50
 
 # Creating an function to be used in other python files
@@ -33,40 +33,27 @@ def get_songs():
     played_at_list = []
     timestamps = []
     artistid = []
-    songid = []
 
-    # Extracting only the relevant bits of data from the json object 
-
+    # Extracting only the relevant bits of data from the json object      
     for song in data["items"]:
-
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at_list.append(song["played_at"])
         timestamps.append(song["played_at"][0:10])
         artistid.append(song["track"]["album"]['artists'][0]['id'])
-        songid.append(song["track"]["id"])
 
-    # Prepare a dictionary in order to turn it into a pandas dataframe below
+    # Prepare a dictionary in order to turn it into a pandas dataframe below       
     song_dict = {
         "song_name" : song_names,
         "artist_name": artist_names,
         "played_at" : played_at_list,
         "timestamp" : timestamps,
-        'artistid' : artistid,
-        'songid' : songid
+        'artistid' : artistid
     }
-    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid", 'songid'])
+    song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid"])
     make_db(song_df)
 
-    #Applying transformation logic
-    Transformed_df=song_df.groupby(['timestamp','artist_name'],as_index = False).count()
-    Transformed_df.rename(columns ={'played_at':'count'}, inplace=True)
-    #Creating a Primary Key based on Timestamp and artist name
-    Transformed_df["ID"] = Transformed_df['timestamp'].astype(str) +"-"+ Transformed_df["artist_name"]
-
-    return Transformed_df[['ID','timestamp','artist_name','count']]
-
-def make_db(Transformed_df):
+def make_db(song_df):
     import sqlite3
     import pandas as pd
 
@@ -74,7 +61,7 @@ def make_db(Transformed_df):
     conn = sqlite3.connect('song_history.db')
 
     # Write the DataFrame to an SQLite table
-    Transformed_df.to_sql('song_history', conn, if_exists='replace', index=False)
+    song_df.to_sql('song_history', conn, if_exists='replace', index=False)
 
     # Commit changes and close the connection
     conn.commit()
