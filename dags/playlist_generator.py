@@ -1,13 +1,10 @@
 import requests
-import sqlalchemy
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
 import requests
 import json
 from datetime import datetime
-import datetime 
 import sqlite3
-import random
 import time
 
 def get_seed():
@@ -27,9 +24,9 @@ def get_seed():
 def get_recommendations(random_song, random_artist):
   #TOKEN LINK - https://developer.spotify.com/
   endpoint_url = "https://api.spotify.com/v1/recommendations?"
-  user_id = "reesespieces07" 
-  TOKEN = "BQDp67zDwWtHKVeQ8tJKKLaTJkM1NQ_LhBWSm8rlKWBETd8G9QgTzx9gNOPIevPxFPYJGkWxOpWfCAiorNK9z1yGQ8gdY_BG4bO7C7h0tNHvDZXv85kScplrXFuCU-9PqdJh6QeY4cDadhTaMMPWYo80dTpP0MHa-hT_2lHwkvhbzTgq_ySgfOKZQvK33QZ1GosM_X6r-J9go14jAO9Jh1TRqiThnNi_Td4wNzzDQn8NWEC2N9KGPIZx46jFVDfm_xhGXgEPUP3ziKG9PYfjY-EghtsiirbsDScWLsXMniicFlJ3Xu56FjPeNhN3eM8rKUYd1L4HCiYeQb8aU0BjsZd3shQ-b3n5"
-  # OUR FILTERS
+  user_id = "mandevseahra_" 
+  TOKEN = "BQBpcrX66xe_xXS0PI-Sza2zuZMv9WjPzR8ASlb4O_y0E8ZMYFcial1sixLXIr49Dgb2laqn3cc-ffg4f_Z8QnHV9HpYseAbFPdSBldNUFDxG9ofN3TVcjz96-qoUbucK2t-FN1MxpAt1Y9BJkfUsVrpov0GB6Sa2MlrfMK8DKN3d3JNsyhdeTBdC7dYcK0wrMBKMzdUo9wDoNkCgnWgno7kVzD_xa9VtUw1BGYqVizYoioA2tyezc9ECYMjRdYuhTprD4nHrSzIzRxLcrXHzDUh8vrx6wVetoIACqc71jCaBQ_vrX5HHSHCP2AfHG95_LRU3DjWTKAH7hyG3VqDucud5D_swgk"
+# OUR FILTERS
   limit= 50
   market="US"
   seed_genres="hip-hop"
@@ -46,6 +43,7 @@ def get_recommendations(random_song, random_artist):
 
   json_response = response.json()
 
+  #creating arrays with no value temporarily
   uris = []
   name = []
   song_name = []
@@ -83,7 +81,8 @@ def make_db(rec_df):
   # Commit the changes and close the database connection
   conn.commit()
   conn.close()
-            
+
+#Creating a function with 4 parameters            
 def make_playlist(user_id, TOKEN,uris,random_artist):
   
   #MAKING THE PLAYLIST
@@ -113,7 +112,6 @@ def make_playlist(user_id, TOKEN,uris,random_artist):
       print("Unsuccessful run - Error Code: {code}".format(code=response.status_code))
   
 def start():
-    from datetime import datetime
     Time = datetime.now()
     print("Starting program at: {time}".format(time=Time))
     time.sleep(5)

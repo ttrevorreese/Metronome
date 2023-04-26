@@ -36,10 +36,14 @@ def play_history():
     engine = create_engine(f'postgresql://{conn.login}:{conn.password}@{conn.host}:{conn.port}/{conn.schema}')
     df.to_sql('song_history', engine, if_exists='replace')
 
+#Function for playlist generator
 def playlist_generator():
+    #Let the user know the playlist is being created
     print("Creating playlist.")
+    #Calling the function
     get_seed()
 
+#Create a delay when executing the playlist.
 def my_task_func():
     time.sleep(300)
     print("Task executed after a 5-minute delay.")

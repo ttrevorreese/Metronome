@@ -1,18 +1,15 @@
-import sqlalchemy
 import pandas as pd
 from sqlalchemy.orm import sessionmaker
 import requests
-import json
 from datetime import datetime
 import datetime 
 import sqlite3
 #TOKEN LINK - https://developer.spotify.com/
-USER_ID = "reesepieces07" 
-TOKEN = "BQDp67zDwWtHKVeQ8tJKKLaTJkM1NQ_LhBWSm8rlKWBETd8G9QgTzx9gNOPIevPxFPYJGkWxOpWfCAiorNK9z1yGQ8gdY_BG4bO7C7h0tNHvDZXv85kScplrXFuCU-9PqdJh6QeY4cDadhTaMMPWYo80dTpP0MHa-hT_2lHwkvhbzTgq_ySgfOKZQvK33QZ1GosM_X6r-J9go14jAO9Jh1TRqiThnNi_Td4wNzzDQn8NWEC2N9KGPIZx46jFVDfm_xhGXgEPUP3ziKG9PYfjY-EghtsiirbsDScWLsXMniicFlJ3Xu56FjPeNhN3eM8rKUYd1L4HCiYeQb8aU0BjsZd3shQ-b3n5"
+USER_ID = "mandevseahra_" 
+TOKEN = "BQBpcrX66xe_xXS0PI-Sza2zuZMv9WjPzR8ASlb4O_y0E8ZMYFcial1sixLXIr49Dgb2laqn3cc-ffg4f_Z8QnHV9HpYseAbFPdSBldNUFDxG9ofN3TVcjz96-qoUbucK2t-FN1MxpAt1Y9BJkfUsVrpov0GB6Sa2MlrfMK8DKN3d3JNsyhdeTBdC7dYcK0wrMBKMzdUo9wDoNkCgnWgno7kVzD_xa9VtUw1BGYqVizYoioA2tyezc9ECYMjRdYuhTprD4nHrSzIzRxLcrXHzDUh8vrx6wVetoIACqc71jCaBQ_vrX5HHSHCP2AfHG95_LRU3DjWTKAH7hyG3VqDucud5D_swgk"
 limit = 50
 
 # Creating an function to be used in other python files
-
 def get_songs():
     input_variables = {
         "Accept" : "application/json",
@@ -36,7 +33,6 @@ def get_songs():
     songid = []
 
     # Extracting only the relevant bits of data from the json object 
-      
     for song in data["items"]:
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
@@ -65,9 +61,6 @@ def get_songs():
     make_db(song_df)
 
 def make_db(song_df):
-    import sqlite3
-    import pandas as pd
-
     # Create a connection to the SQLite database
     conn = sqlite3.connect('song_history.db')
 
@@ -78,4 +71,5 @@ def make_db(song_df):
     conn.commit()
     conn.close()
 
+#Call the get_songs function
 get_songs()
