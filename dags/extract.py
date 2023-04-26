@@ -7,9 +7,8 @@ from datetime import datetime
 import datetime 
 import sqlite3
 
-
-USER_ID = "7gau3mfurpamvofd00ej790p9" 
-TOKEN = "BQCuvxjON0t65E_8IR4e1TBzB4nPOAeHJN1v0PBIALtUDwHLmCeWYDBPlQdyyC8wJDC3FukRHzaBnorZf0y-COuUMUcPrpvMxvc6fte_ysSodWz1HkRwKgHtq-0mZRoxeLwcD6-v26csQksEpzUAtBY6XdOA6y_JeDf0i4dGwZ_TcqrDuV65jw9eQQdx_-lxTr4tLq0TDcjQW7mVT2BgFmoSVFD7sJ8y2yPh2JR9bUcMZe0rhyZrHKnpr0kDK8yzpDUIcM8QOxUBcPmTw2l37Z7o7WBjGORp51mNUWM4T1lcGNNiDVCodp8AU21sb6EpH1QHWSmFB_Nvx9VYP2vsHGS6A2Cer5oZj_uFBqeI1M9U_BI"
+USER_ID = "reesepieces07" 
+TOKEN = "BQCRWvjv_-trzxW02y3UaJkcf5EUFf7FANWiyJx8rI1Gw8qoS9yAWkpRd0_tKP0jq-RwAnVQRTlyhazU1sq4-aAUyxneVvjWXtHtvqT0RoA02GGWQ5UEENjzlwwSW0cBMevVziCmqOrCIYqkgJeCxfSushl8psM-aFeVfhIx0WcTQnRwfnyxwbbL_gkCRrQbEsblCh2XDGBAj_5pbNWxTQM6i-vG76Ykq3mVH_DgxLk09RZEY05jrQkDlV1GmQrdjtsLPwuyjkYWqQPCVW85LNulJYrubUxhtzqdzDoBNoMcgilqFdEraLI54Il--6DkJxXk8nLsqUKxNwsLUkX9vGfb91FEAZJT"
 limit = 50
 
 # Creating an function to be used in other python files
@@ -20,13 +19,11 @@ def get_songs():
         "Content-Type" : "application/json",
         "Authorization" : "Bearer {token}".format(token=TOKEN)
     }
-        
+
     today = datetime.datetime.now()
     yesterday = today - datetime.timedelta(days=10)
     yesterday_unix_timestamp = int(yesterday.timestamp()) * 1000
 
-
-    
     # Download all songs you've listened to "after yesterday", which means in the last 24 hours      
     r = requests.get("https://api.spotify.com/v1/me/player/recently-played?limit={limit}&after={time}".format(time=yesterday_unix_timestamp, limit = limit), headers = input_variables)
 
@@ -41,7 +38,6 @@ def get_songs():
     # Extracting only the relevant bits of data from the json object 
       
     for song in data["items"]:
-        
         song_names.append(song["track"]["name"])
         artist_names.append(song["track"]["album"]["artists"][0]["name"])
         played_at_list.append(song["played_at"])
@@ -66,8 +62,6 @@ def get_songs():
     print(song_df)
     make_db(song_df)
 
-
-
 def make_db(song_df):
     import sqlite3
     import pandas as pd
@@ -82,12 +76,4 @@ def make_db(song_df):
     conn.commit()
     conn.close()
 
-
-
-
-
-
 get_songs()
-
-
-

@@ -1,58 +1,9 @@
 import requests
-
-<<<<<<< HEAD
-endpoint_url = "https://api.spotify.com/v1/recommendations?"
-TOKEN = "BQCRWvjv_-trzxW02y3UaJkcf5EUFf7FANWiyJx8rI1Gw8qoS9yAWkpRd0_tKP0jq-RwAnVQRTlyhazU1sq4-aAUyxneVvjWXtHtvqT0RoA02GGWQ5UEENjzlwwSW0cBMevVziCmqOrCIYqkgJeCxfSushl8psM-aFeVfhIx0WcTQnRwfnyxwbbL_gkCRrQbEsblCh2XDGBAj_5pbNWxTQM6i-vG76Ykq3mVH_DgxLk09RZEY05jrQkDlV1GmQrdjtsLPwuyjkYWqQPCVW85LNulJYrubUxhtzqdzDoBNoMcgilqFdEraLI54Il--6DkJxXk8nLsqUKxNwsLUkX9vGfb91FEAZJT"
-user_id = 'reesespieces07' #USER ID
-
-########################################################################################################
-
-
-# I MADE A NEW RECCOMENDATION ENGINE FOR THE TEST BUT THIS SHOULD BE ABLE TO EB DELETED FROM THIS FILE
-
-# OUR FILTERS
-limit= 50
-market="GB"
-seed_genres="hip-hop"
-target_danceability=0.9
-seed_artists = '2jku7tDXc6XoB6MO2hFuqg'
-seed_tracks='7n0lXKEOaFxrAU0R93fIQh'
-query = f'{endpoint_url}limit={limit}&market={market}&seed_genres={seed_genres}&target_danceability={target_danceability}'
-query += f'&seed_artists={seed_artists}'
-query += f'&seed_tracks={seed_tracks}'
-
-query = f'{endpoint_url}limit={limit}&market={market}&seed_genres={seed_genres}&target_danceability={target_danceability}'
-
-response =requests.get(query, 
-               headers={"Content-Type":"application/json", 
-                        "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN)})
-
-json_response = response.json()
-
-uris = [] 
-
-for i in json_response['tracks']:
-            uris.append(i['uri'])
-            print(f"\"{i['name']}\" by {i['artists'][0]['name']}")
-            
-############################################################
-
-#THIS IS THE PART WE CAN ADD ON TO OUR PREVIOUS RECCOMENDATION FILE
-            
-=======
-import sqlalchemy
-import pandas as pd
-from sqlalchemy.orm import sessionmaker
-import requests
->>>>>>> 201873d1c61f0d45de48482b016ded1f1b1816bc
+import pandas as pd            
 import json
 from datetime import datetime
 import datetime 
 import sqlite3
-
-
-
-
 
 def get_seed():
   import random
@@ -67,15 +18,13 @@ def get_seed():
   # Choose a random line from the list
   #this choses a random track to use as a seed track
   random_song = random.choice(lines)
-  get_reccomendations(random_song)
+  get_recommendations(random_song)
   
-
-
-def get_reccomendations(random_song):
+def get_recommendations(random_song):
   
   endpoint_url = "https://api.spotify.com/v1/recommendations?"
-  user_id = "7gau3mfurpamvofd00ej790p9" 
-  TOKEN = "BQCuvxjON0t65E_8IR4e1TBzB4nPOAeHJN1v0PBIALtUDwHLmCeWYDBPlQdyyC8wJDC3FukRHzaBnorZf0y-COuUMUcPrpvMxvc6fte_ysSodWz1HkRwKgHtq-0mZRoxeLwcD6-v26csQksEpzUAtBY6XdOA6y_JeDf0i4dGwZ_TcqrDuV65jw9eQQdx_-lxTr4tLq0TDcjQW7mVT2BgFmoSVFD7sJ8y2yPh2JR9bUcMZe0rhyZrHKnpr0kDK8yzpDUIcM8QOxUBcPmTw2l37Z7o7WBjGORp51mNUWM4T1lcGNNiDVCodp8AU21sb6EpH1QHWSmFB_Nvx9VYP2vsHGS6A2Cer5oZj_uFBqeI1M9U_BI"
+  user_id = "reesespieces07" 
+  TOKEN = "BQCRWvjv_-trzxW02y3UaJkcf5EUFf7FANWiyJx8rI1Gw8qoS9yAWkpRd0_tKP0jq-RwAnVQRTlyhazU1sq4-aAUyxneVvjWXtHtvqT0RoA02GGWQ5UEENjzlwwSW0cBMevVziCmqOrCIYqkgJeCxfSushl8psM-aFeVfhIx0WcTQnRwfnyxwbbL_gkCRrQbEsblCh2XDGBAj_5pbNWxTQM6i-vG76Ykq3mVH_DgxLk09RZEY05jrQkDlV1GmQrdjtsLPwuyjkYWqQPCVW85LNulJYrubUxhtzqdzDoBNoMcgilqFdEraLI54Il--6DkJxXk8nLsqUKxNwsLUkX9vGfb91FEAZJT"
   # OUR FILTERS
   limit= 50
   market="US"
@@ -87,19 +36,11 @@ def get_reccomendations(random_song):
   #query += f'&seed_artists={seed_artists}'
   query += f'&seed_tracks={seed_tracks}'
 
-
-
-
-
   response =requests.get(query, 
                 headers={"Content-Type":"application/json", 
                           "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN)})
 
-
-
-
   json_response = response.json()
-
 
   uris = []
   name = []
@@ -116,16 +57,14 @@ def get_reccomendations(random_song):
   song_dict = {"Artist Name": name, "Song Name": song_name, 'uris' : song_uri}
 
   # Convert the dictionary into a DataFrame
-  recc_df = pd.DataFrame(song_dict)
-  make_db(recc_df)
+  rec_df = pd.DataFrame(song_dict)
+  make_db(rec_df)
   make_playlist(user_id, TOKEN,uris) 
 
-
-
-def make_db(recc_df):
+def make_db(rec_df):
        
   # Define the file path and database name
-  db_path = "reccomendations.db"
+  db_path = "recommendations.db"
   # Create a SQLite database connection
   conn = sqlite3.connect(db_path)
 
@@ -133,31 +72,25 @@ def make_db(recc_df):
   c = conn.cursor()
   c.execute('''CREATE TABLE IF NOT EXISTS recommendations
           (song_name text, name text)''')
-  
 
   # Insert the DataFrame into the recommendations table
-  recc_df.to_sql('recommendations', conn, if_exists='replace', index=False)
+  rec_df.to_sql('recommendations', conn, if_exists='replace', index=False)
 
   # Commit the changes and close the database connection
   conn.commit()
   conn.close()
-            
-           
-
+              
 def make_playlist(user_id, TOKEN,uris):
   endpoint_url = f"https://api.spotify.com/v1/users/{user_id}/playlists"
   request_body = json.dumps({
-            "name": "Indie bands like Franz Ferdinand but using Python",
-            "description": "My first programmatic playlist, yooo!",
+            "name": "Metronome",
+            "description": "This playlist was created using a data pipeline!",
             "public": False # let's keep it between us - for now
           })
   response = requests.post(url = endpoint_url, data = request_body, headers={"Content-Type":"application/json", 
                           "Authorization":"Bearer {TOKEN}".format(TOKEN=TOKEN)})
-
-
-
+  
   playlist_id = response.json()['id']
-
 
   last_endpoint_url = f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks"
 
