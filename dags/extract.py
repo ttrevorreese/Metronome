@@ -4,8 +4,9 @@ import requests
 from datetime import datetime
 import datetime 
 import sqlite3
-#TOKEN LINK - https://developer.spotify.com/
-USER_ID = "mandevseahra_" 
+### REPLACE WITH YOUR USERNAME AND GENERATED API TOKEN
+user_id = "mandevseahra_" 
+### TOKEN LINK - https://developer.spotify.com/
 TOKEN = "BQBpcrX66xe_xXS0PI-Sza2zuZMv9WjPzR8ASlb4O_y0E8ZMYFcial1sixLXIr49Dgb2laqn3cc-ffg4f_Z8QnHV9HpYseAbFPdSBldNUFDxG9ofN3TVcjz96-qoUbucK2t-FN1MxpAt1Y9BJkfUsVrpov0GB6Sa2MlrfMK8DKN3d3JNsyhdeTBdC7dYcK0wrMBKMzdUo9wDoNkCgnWgno7kVzD_xa9VtUw1BGYqVizYoioA2tyezc9ECYMjRdYuhTprD4nHrSzIzRxLcrXHzDUh8vrx6wVetoIACqc71jCaBQ_vrX5HHSHCP2AfHG95_LRU3DjWTKAH7hyG3VqDucud5D_swgk"
 limit = 50
 
@@ -52,7 +53,7 @@ def get_songs():
     }
     song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid", 'songid'])
     
-    #making text files woth the song id and artist name
+    # Making text files with the song ID and artist name
     song_df[['songid', 'artist_name']].to_csv('filename.txt', sep=' ', index=False, header=False)
     with open('songids.txt', 'w') as f:
             for song_uri in song_df['songid']:
@@ -71,5 +72,5 @@ def make_db(song_df):
     conn.commit()
     conn.close()
 
-#Call the get_songs function
+# Call the get_songs function
 get_songs()
