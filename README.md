@@ -42,7 +42,7 @@ We will work on the project as a Scrum team, adopting design and project managem
 1. Clone this repository into Visual Studio Code using this link: https://github.com/ttrevorreese/Metronome/
 2. Retrieve your Spotify API token from this link: https://developer.spotify.com/
 3. In the `extract.py` file and the `playlist_generator.py` file, replace the `user_id` variable with your Spotify username and the `TOKEN` variable with your API token taken from the line above. Make sure to save both files.
-4. Download Docker Desktop and in the `docker-compose.yaml` file, create a new terminal and run the commands `airflow db init` followed by `docker compose up` to create the docker container. Go to http://localhost:8080 to access Airflow, with the username and password being airflow.
+4. Download Docker Desktop and in the `docker-compose.yml` file, create a new terminal and run the commands `airflow db init` followed by `docker compose up` to create the docker container. Go to http://localhost:8080 to access Airflow, with the username and password being airflow.
 5. Once the Docker container is ran, run the `spotify_dag.py` file to initialize the DAG within Airflow.
 6. In your Spotify account, you should see a new playlist generated. The DAG file will update the playlist with new songs periodically as you listen when the DAG is active.
 7. Alternatively, you can run the `extract.py` and `playlist_generator.py` files to create one playlist.
