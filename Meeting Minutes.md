@@ -89,3 +89,27 @@ We revised our work thus far after Spring Break and laid out our goals for our f
 ### Meeting 18 - 20 April 2023
 
 We begun revising our pipeline structure, as it was not efficient enough for our final deliverable. We looked at the structure of what we had and worked on ways to more efficiently provide the service we need. We connected the recommendation tool to Airflow and began troubleshooting the dag process in order to finalize the playlist creation tool.
+
+### Meeting 19 - 21 April 2023
+
+We continued revising the final product for the submission deadline.
+
+### Meeting 20 - 22 April 2023
+
+We continued revising the final product for the submission deadline.
+
+### Meeting 21 - 23 April 2023
+
+We continued revising the final product for the submission deadline.
+
+### Meeting 22 - 24 April 2023
+
+We continued revising the final product for the submission deadline.
+
+### Meeting 23 - 25 April 2023
+
+We continued revising the final product for the submission deadline.
+
+### Meeting 24 - 26 April 2023
+
+We continued revising the final product for the submission deadline.
