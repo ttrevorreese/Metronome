@@ -59,7 +59,9 @@ def get_songs():
         'songid' : songid
     }
     song_df = pd.DataFrame(song_dict, columns = ["song_name", "artist_name", "played_at", "timestamp", "artistid", 'songid'])
-
+    
+    #making text files woth the song id and artist name
+    song_df[['songid', 'artist_name']].to_csv('filename.txt', sep=' ', index=False, header=False)
     with open('songids.txt', 'w') as f:
             for song_uri in song_df['songid']:
                 f.write("%s\n" % song_uri)
