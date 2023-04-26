@@ -6,6 +6,7 @@ from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 from sqlalchemy import create_engine
 from airflow.utils.dates import days_ago
+import time
 # Import functions from other python files (scripts)
 from extract import get_songs
 from playlist_generator import get_seed
@@ -39,6 +40,10 @@ def playlist_generator():
     print("Creating playlist.")
     get_seed()
 
+def my_task_func():
+    time.sleep(300)
+    print("Task executed after a 5-minute delay.")
+
 with dag:    
     create_table= PostgresOperator(
         task_id='create_table',
@@ -68,4 +73,10 @@ with dag:
         dag=dag
     )
 
-    create_table >> t2 >> t3
+    t4 = PythonOperator(
+        task_id='delay',
+        python_callable=my_task_func,
+        dag=dag
+    )
+
+    create_table >> t2 >> t3 >> t4
