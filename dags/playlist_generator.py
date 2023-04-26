@@ -27,8 +27,8 @@ def get_seed():
 def get_recommendations(random_song, random_artist):
   #TOKEN LINK - https://developer.spotify.com/
   endpoint_url = "https://api.spotify.com/v1/recommendations?"
-  user_id = "reesespieces07" 
-  TOKEN = "BQDp67zDwWtHKVeQ8tJKKLaTJkM1NQ_LhBWSm8rlKWBETd8G9QgTzx9gNOPIevPxFPYJGkWxOpWfCAiorNK9z1yGQ8gdY_BG4bO7C7h0tNHvDZXv85kScplrXFuCU-9PqdJh6QeY4cDadhTaMMPWYo80dTpP0MHa-hT_2lHwkvhbzTgq_ySgfOKZQvK33QZ1GosM_X6r-J9go14jAO9Jh1TRqiThnNi_Td4wNzzDQn8NWEC2N9KGPIZx46jFVDfm_xhGXgEPUP3ziKG9PYfjY-EghtsiirbsDScWLsXMniicFlJ3Xu56FjPeNhN3eM8rKUYd1L4HCiYeQb8aU0BjsZd3shQ-b3n5"
+  user_id = "lra1yg1ms1ku3t4xzyc6z8cx6" 
+  TOKEN = "BQDW6owO3csngq1YyvgAqs8ii4rNYBpAP2aAJxI9uUFOK81_tHGQ1C0U4f37EeDqFCZmMOFClRIvQG2Rj7gp1x9odIqZHfXBqDmj4hcK4geO83N-jyjHOCt1GTDDd_gjsZA0IVt57yT88q6hMm3cK5cY_aWBu6TueN-xPas-4Aq8aOo4Bl48MyPMeT4fwUmvfgQf7iEbDKhshvh5vUB5V2jqv3FodrF4wFma7SQYzVYUu7eCjykUOj68PVuoJP-OU6_w7aEsvEKkp_yuMHMLPFne0d1XU8rxn4_nqpLrSbHbJeH0tpKVOq6w7YJyXvjLEFiyG5C47umPGhtd482m6UmvE0Fey94NAhJoKEMnsOKflYU"
   # OUR FILTERS
   limit= 50
   market="US"
