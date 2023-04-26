@@ -27,11 +27,15 @@ We will work on the project as a Scrum team, adopting design and project managem
 
 ## Key Features
 
-*TBD...*
+- Extracts user's Spotify listening history (most recent 50 songs played)
+- Generates 50 recommendations based on the listening history
+- Creates a playlist on the user's account with the recommendations
 
 ## Build Structure
 
-*TBD...*
+- Apache Airflow within a Docker container
+- Python scripts being ran in the background using the Airflow DAG file
+- Spotify API implementation
 
 ## Installation and Use
 
@@ -43,7 +47,15 @@ If there are any bugs or issues with the program or installation, please use the
 
 ## Programming Languages and Tools
 
-*TBD...*
+<img align="left" alt="Python" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/python/python-original.svg style="padding-right:10px;"/>
+<img align="left" alt="NumPy" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/numpy/numpy-original.svg style="padding-right:10px;"/>
+<img align="left" alt="Pandas" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg style="padding-right:10px;"/>
+<img align="left" alt="Docker" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/docker/docker-original.svg style="padding-right:10px;"/>
+<img align="left" alt="Git" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/git/git-original.svg style="padding-right:10px;"/>
+<img align="left" alt="Visual Studio Code" width="26px" src="https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/vscode/vscode-original.svg" style="padding-right:10px;"/>
+<img align="left" alt="GitHub" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/github/github-original.svg style="padding-right:10px;"/>
+
+<br />
 
 ## Contributors
 
