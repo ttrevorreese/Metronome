@@ -6,7 +6,7 @@ import json
 from datetime import datetime
 import datetime 
 import sqlite3
-
+#TOKEN LINK - https://developer.spotify.com/
 USER_ID = "reesepieces07" 
 TOKEN = "BQDp67zDwWtHKVeQ8tJKKLaTJkM1NQ_LhBWSm8rlKWBETd8G9QgTzx9gNOPIevPxFPYJGkWxOpWfCAiorNK9z1yGQ8gdY_BG4bO7C7h0tNHvDZXv85kScplrXFuCU-9PqdJh6QeY4cDadhTaMMPWYo80dTpP0MHa-hT_2lHwkvhbzTgq_ySgfOKZQvK33QZ1GosM_X6r-J9go14jAO9Jh1TRqiThnNi_Td4wNzzDQn8NWEC2N9KGPIZx46jFVDfm_xhGXgEPUP3ziKG9PYfjY-EghtsiirbsDScWLsXMniicFlJ3Xu56FjPeNhN3eM8rKUYd1L4HCiYeQb8aU0BjsZd3shQ-b3n5"
 limit = 50
