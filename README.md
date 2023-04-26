@@ -39,7 +39,13 @@ We will work on the project as a Scrum team, adopting design and project managem
 
 ## Installation and Use
 
-*TBD...*
+1. Clone this repository into Visual Studio Code using this link: https://github.com/ttrevorreese/Metronome/
+2. Retrieve your Spotify API token from this link: https://developer.spotify.com/
+3. In the `extract.py` file and the `playlist_generator.py` file, replace the `user_id` variable with your Spotify username and the `TOKEN` variable with your API token taken from the line above. Make sure to save both files.
+4. Download Docker Desktop and in the `docker-compose.yaml` file, create a new terminal and run the commands `airflow db init` followed by `docker compose up` to create the docker container. Go to http://localhost:8080 to access Airflow, with the username and password being airflow.
+5. Once the Docker container is ran, run the `spotify_dag.py` file to initialize the DAG within Airflow.
+6. In your Spotify account, you should see a new playlist generated. The DAG file will update the playlist with new songs periodically as you listen when the DAG is active.
+7. Alternatively, you can run the `extract.py` and `playlist_generator.py` files to create one playlist.
 
 ## Bug Reporting
 
@@ -54,6 +60,7 @@ If there are any bugs or issues with the program or installation, please use the
 <img align="left" alt="Git" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/git/git-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Visual Studio Code" width="26px" src="https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/vscode/vscode-original.svg" style="padding-right:10px;"/>
 <img align="left" alt="GitHub" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/github/github-original.svg style="padding-right:10px;"/>
+<img align="left" alt="Spotify" width="26px" src=https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg style="padding-right:10px;"/>
 
 <br />
 
