@@ -123,5 +123,5 @@ def start():
     while True:
         print("Executing playlist generator at: {time}".format(time=Time))
         get_seed()
-        time.sleep(10)
+        time.sleep(600)
 start()
