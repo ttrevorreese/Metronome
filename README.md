@@ -54,6 +54,7 @@ If there are any bugs or issues with the program or installation, please use the
 ## Programming Languages and Tools
 
 <img align="left" alt="Python" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/python/python-original.svg style="padding-right:10px;"/>
+<img align="left" alt="Airflow" width="52px" src=https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/AirflowLogo.png/800px-AirflowLogo.png?20191014185111 style="padding-right:10px;"/>
 <img align="left" alt="NumPy" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/numpy/numpy-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Pandas" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Docker" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/docker/docker-original.svg style="padding-right:10px;"/>
@@ -62,6 +63,7 @@ If there are any bugs or issues with the program or installation, please use the
 <img align="left" alt="Visual Studio Code" width="26px" src="https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/vscode/vscode-original.svg" style="padding-right:10px;"/>
 <img align="left" alt="GitHub" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/github/github-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Spotify" width="26px" src=https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg style="padding-right:10px;"/>
+<img align="left" alt="DBeaver" width="26px" src=https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/256px-DBeaver_logo.svg.png?20210313151619 style="padding-right:10px;"/>
 
 <br />
 
