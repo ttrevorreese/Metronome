@@ -12,7 +12,7 @@ The mock company we have created to work with this data is called Metronome, whe
 
 ## Project Scope
 
-This project is aimed at creating a data engineering system (data pipeline) for a business' smooth and efficient data delivery.
+This project is aimed at creating a data engineering system (data pipeline) for smooth and efficient data delivery.
 
 We will work on the project as a Scrum team, adopting design and project management methods, such as Agile and Kanban. Familiarity and knowledge of a typical software development team, such as Visual Studio, Git, and Docker, is essential. We will also need to familiarize ourselves with some of the difficult human and technical issues around collaborating on and continuous improvement of a data delivery system.
 
