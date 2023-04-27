@@ -57,6 +57,7 @@ If there are any bugs or issues with the program or installation, please use the
 <img align="left" alt="NumPy" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/numpy/numpy-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Pandas" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Docker" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/docker/docker-original.svg style="padding-right:10px;"/>
+<img align="left" alt="PostgreSQL" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/postgresql/postgresql-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Git" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/git/git-original.svg style="padding-right:10px;"/>
 <img align="left" alt="Visual Studio Code" width="26px" src="https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/vscode/vscode-original.svg" style="padding-right:10px;"/>
 <img align="left" alt="GitHub" width="26px" src=https://github.com/devicons/devicon/blob/2ae2a900d2f041da66e950e4d48052658d850630/icons/github/github-original.svg style="padding-right:10px;"/>
