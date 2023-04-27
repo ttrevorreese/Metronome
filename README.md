@@ -73,4 +73,4 @@ If there are any bugs or issues with the program or installation, please use the
 
 ## Credits
 
-*TBD...*
+This project was done in honor and loving memory of Mandev's father. ♥
